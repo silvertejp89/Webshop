@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+// Font Family Variables
+
+$barlow: 'Barlow', sans-serif;
+$inter: 'Inter', sans-serif;
+$poppins: 'Poppins', sans-serif;
+
+// Font Weights
+
+$light: 300;
+$regular: 400;
+$medium: 500;
+$bold: 600;
+
+// Font Sizes
+
+// Base Font Size
+
+$base-font-size: 16px;
+
+// Heading Sizes
+
+$h1: $base-font-size * 3.5;
+$h2: $base-font-size * 2.5;
+$h3: $base-font-size * 2;
+$h4: $base-font-size * 1.25;
+$h5: $base-font-size;
+
+// Body Font Sizes
+
+$b1: $base-font-size * 0.875;
+$b2: $base-font-size * 0.75;
+ 
+
