@@ -7,7 +7,29 @@
     <title>Sell it or buy it?</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/ts/main.ts"></script>
+    <div id="item-container"></div>
+ 
+  <script>
+    // Fetch your JSON data (you might use AJAX, fetch, etc.)
+    fetch('src/data/products.json')
+      .then(response => response.json())
+      .then(data => {
+        const items = data;
+
+        const itemContainer = document.getElementById("item-container");
+
+        items.forEach(item => {
+          const imagePath = item.thumbnail_image;
+
+          const imageElement = document.createElement("img");
+          imageElement.src = imagePath;
+          imageElement.alt = item.name;
+
+          itemContainer.appendChild(imageElement);
+        });
+      })
+      .catch(error => console.error('Error fetching data:', error));
+ 
+</script>
   </body>
 </html>

@@ -2,7 +2,7 @@
     {   
         "id": 1,
         "name": "Olof",
-        "thumbnail_image": "",
+        "thumbnail_image": "src/images/photos/Olof_product_image.png",
         "image": "",
         "color": "Black",
         "priceSEK": 895.00,
@@ -12,7 +12,7 @@
     {
         "id": 2,
         "name": "Dante Vegan",
-        "thumbnail_image": "",
+        "thumbnail_image": "src/images/photos/Dante_product_image.png",
         "image": "",
         "color": "Black",
         "priceSEK": 1395.00,
@@ -22,7 +22,7 @@
     {
         "id": 3,
         "name": "Tony Vegan",
-        "thumbnail_image": "",
+        "thumbnail_image": "src/images/photos/Tony_product_image.png",
         "image": "",
         "color": "Green",
         "priceSEK": 1295.00,
@@ -32,7 +32,7 @@
     {
         "id": 4,
         "name": "Kurt",
-        "thumbnail_image": "",
+        "thumbnail_image": "src/images/photos/Kurt_product_image.png",
         "image": "",
         "color": "Pink",
         "priceSEK": 1295.00,
@@ -42,7 +42,7 @@
     {
         "id": 5,
         "name": "Jack",
-        "thumbnail_image": "",
+        "thumbnail_image": "src/images/photos/Jack_product_image.png",
         "image": "",
         "color": "Yellow",
         "priceSEK": 1695.00,
@@ -52,7 +52,7 @@
     {
         "id": 6,
         "name": "Walter",
-        "thumbnail_image": "",
+        "thumbnail_image": "src/images/photos/Walter_product_image.png",
         "image": "",
         "color": "Grey and Black",
         "priceSEK": 1895.00,
@@ -62,7 +62,7 @@
     {
         "id": 7,
         "name": "Antonia",
-        "thumbnail_image": "",
+        "thumbnail_image": "src/images/photos/Antonia_product_image.png",
         "image": "",
         "color": "Black",
         "priceSEK": 3295.00,
@@ -72,7 +72,7 @@
     {
         "id": 8,
         "name": "Noa",
-        "thumbnail_image": "",
+        "thumbnail_image": "src/images/photos/Noa_product_image.png",
         "image": "",
         "color": "Beige",
         "priceSEK": 1895.00,
@@ -82,7 +82,7 @@
     {
         "id": 9,
         "name": "Iris",
-        "thumbnail_image": "",
+        "thumbnail_image": "src/images/photos/Iris_product_image.png",
         "image": "",
         "color": "Orange",
         "priceSEK": 3295.00,
@@ -92,7 +92,7 @@
     {
         "id": 10,
         "name": "Louie",
-        "thumbnail_image": "",
+        "thumbnail_image": "src/images/photos/Louie_product_image.png",
         "image": "",
         "color": "Black",
         "priceSEK": 1995.00,
@@ -102,7 +102,7 @@
     {
         "id": 11,
         "name": "Jack",
-        "thumbnail_image": "",
+        "thumbnail_image": "src/images/photos/Jack Deep Green.png",
         "image": "",
         "color": "Deep Green",
         "priceSEK": 1695.00,
@@ -112,7 +112,7 @@
     {
         "id": 12,
         "name": "Aste",
-        "thumbnail_image": "",
+        "thumbnail_image": "src/images/photos/Aste_product_image.png",
         "image": "",
         "color": "Blue",
         "priceSEK": 595.00,
