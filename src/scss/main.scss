@@ -1,0 +1,22 @@
+// SCSS Components
+
+@import "./components/buttons.scss";
+@import "./components/navbar.scss";
+@import "./components/productcards.scss";
+@import "./components/footer.scss";
+// SCSS Base
+
+@import "./base/colors.scss";
+@import "./base/typography.scss";
+@import "./base/variables.scss";
+
+// SCSS Pages
+
+@import "./pages/checkout.scss";
+@import "./pages/home.scss";
+@import "./pages/pdp.scss";
+@import "./pages/plp.scss";
+
+// SCSS Utilities
+
+@import "./utilities/mixins.scss"
