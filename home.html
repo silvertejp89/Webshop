@@ -5,10 +5,62 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sandqvist</title>
+    <link rel="stylesheet" href="home.css" />
   </head>
   <body>
     <div id="root"></div>
 
     <script type="module" src="/src/ts/pages/home.ts"></script>
+    <div class="container">
+      <nav>Navbar</nav>
+      <main>Main</main>
+      <div id="sidebar">Sidebar</div>
+      <div id="content1">Content1</div>
+      <div id="content2">Content2</div>
+      <div id="content3">Content3</div>
+      <div id="content4">Content4</div>
+      <footer>Footer</footer>
+    </div>
+
+    <style>
+      .container {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+      }
+      nav {
+        background-color: blueviolet;
+        grid-area: nav;
+      }
+      main {
+        background-color: yellow;
+        grid-area: main;
+      }
+      #sidebar {
+        background-color: brown;
+        grid-area: conent1;
+      }
+      #content1 {
+        background-color: aqua;
+      }
+      #content2 {
+        background-color: aquamarine;
+      }
+      #content3 {
+        background-color: black;
+      }
+      #content4 {
+        background-color: cadetblue;
+      }
+      footer {
+        background-color: teal;
+        grid-template-areas:
+          "nav nav nav nav"
+          "main main  main  sidebar"
+          "content1 content2 content3 sidebar"
+          "footer footer footer sidebar";
+      }
+    </style>
   </body>
 </html>
