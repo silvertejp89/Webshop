@@ -3,120 +3,144 @@
         "id": 1,
         "name": "Olof",
         "thumbnail_image": "src/images/photos/Olof_product_image.png",
-        "image": "",
+        "image_back": "src/images/photos/Olof_back.png",
+        "image_side": "src/images/photos/Olof_side.png",
         "color": "Black",
         "priceSEK": 895.00,
         "description": "Funktionell och vattenavvisande cross-body väska tillverkad i 100% återvunnen polyester. Väskan är designad med två innerfickor, en avtagbar och justerbar axelrem och ett handtag. En perfekt extraväska för de dagar du bara behöver packa det viktigaste.",
-        "measurement": "24 x 16 x 9 cm"
+        "measurement": "24 x 16 x 9 cm",
+        "size": "One size"
     },
     {
         "id": 2,
         "name": "Dante Vegan",
         "thumbnail_image": "src/images/photos/Dante_product_image.png",
-        "image": "",
+        "image_back": "src/images/photos/Dante_back_picture.png",
+        "image_side": "src/images/photos/Dante_side_product.png",
         "color": "Black",
         "priceSEK": 1395.00,
         "description": "Dante Vegan är en rymlig och vattenavvisande rolltop-ryggsäck skapad för att kunna användas varje dag, oavsett om du pendlar till jobbet eller är ute i naturen. Dante Vegan en variant av vår bästsäljande modell Dante, men gjord utan läderdetaljer och i 100% återvunna och veganska material. Väskan stängs med ett spänne i metall och rymmer mellan 16–23 L. Ryggsäcken har två innerfack, varav ett passar de flesta datorer upp till 16 tum. Vadderade axelremmar för skön bärkomfort och ytterfack med dragkedja, samt handtag på sidan. Det här är en hållbar ryggsäck med hög kvalitet och tidlös design, som du kan använda och älska länge. Dante Vegan är en del av vår Ground-kollektion. Här hittar du fler väskor i samma serie.",
-        "measurement": "26 x 43/56 x 16 cm"
+        "measurement": "26 x 43/56 x 16 cm",
+        "size": "One size"
     },
     {
         "id": 3,
         "name": "Tony Vegan",
         "thumbnail_image": "src/images/photos/Tony_product_image.png",
-        "image": "",
+        "image_back": "src/images/photos/Tony_back.png",
+        "image_side": "src/images/photos/Tony_side.png",
         "color": "Green",
         "priceSEK": 1295.00,
         "description": "Ryggsäck i 100 % återvunnen polyester med vattentät TPU-beläggning. Väskan har ett 15' laptopfack, en yttrerficka med blixtlås och kan bära upp till 13 L. Funktionaliteten och den minimalistiska designen gör denna ryggsäck till en idealisk följeslagare, vart du än går.",
-        "measurement": "27 x 42 x 12 cm"
+        "measurement": "27 x 42 x 12 cm",
+        "size": "One size"
     },
     {
         "id": 4,
         "name": "Kurt",
         "thumbnail_image": "src/images/photos/Kurt_product_image.png",
-        "image": "",
+        "image_back": "src/images/photos/Kurt_back.png",
+        "image_side": "src/images/photos/Kurt_side.png",
         "color": "Pink",
         "priceSEK": 1295.00,
         "description": "Kurt är en minimalistisk, mångsidig och slitstark rolltop-ryggsäck med fina läderdetaljer. Den rymmer upp till 17 L och är gjord av vattenavvisande och 100% återvunnen polyester. Kurt har justerbara axelremmar, ett dolt ytterfack med dragkedja, samt ett laptopfack som passar de flesta datorer upp till 16 tum. Denna ryggsäck är perfekt att använda varje dag, oavsett om du pendlar till jobbet eller är ute i naturen. Kurt är ett av de senaste tillskotten i vår Ground-kollektion. Här hittar du fler väskor i samma serie.",
-        "measurement": "27 x 38 x 15 cm"
+        "measurement": "27 x 38 x 15 cm",
+        "size": "One size"
     },
     {
         "id": 5,
         "name": "Jack",
         "thumbnail_image": "src/images/photos/Jack_product_image.png",
-        "image": "",
+        "image_back": "src/images/photos/Jack_yellow_back.png",
+        "image_side": "src/images/photos/Jack_yellow_side.png",
         "color": "Yellow",
         "priceSEK": 1695.00,
         "description": "Vattenavvisande och funktionell ryggsäck tillverkad av 100 % återvunnen polyester. Den har ett 15' laptopfack och kan bära upp till 17 L. Väskan är designad med flera funktionella ytter- och innerfickor. Denna väska är en modern klassiker att bära varje dag eller under kortare vandringar.",
-        "measurement": "26 x 40 x 16 cm"
+        "measurement": "26 x 40 x 16 cm",
+        "size": "One size"
     },
     {
         "id": 6,
         "name": "Walter",
         "thumbnail_image": "src/images/photos/Walter_product_image.png",
-        "image": "",
+        "image_back": "src/images/photos/Walter_back",
+        "image_side": "src/images/photos/Walter_side.png",
         "color": "Grey and Black",
         "priceSEK": 1895.00,
         "description": "Vattenavvisande och rymlig ryggsäck tillverkad i 100% återvunnen polyester. Den har ett 16' laptopfack och rymmer upp till 19 L.",
-        "measurement": "27 x 45 x 16 cm"
+        "measurement": "27 x 45 x 16 cm",
+        "size": "One size"
     },
     {
         "id": 7,
         "name": "Antonia",
         "thumbnail_image": "src/images/photos/Antonia_product_image.png",
-        "image": "",
+        "image_back": "src/images/photos/Antonia_back.png",
+        "image_side": "src/images/photos/Antonia_side.png",
         "color": "Black",
         "priceSEK": 3295.00,
         "description": "Antonia är en stilren och tidlös rolltop-ryggsäck, gjord av anilinfärgat full grain-läder från norra Europa. I huvudfacket finns en ficka med dragkedja och fyra öppna fack. I de mindre facken får du plats med en mobiltelefon och det största facket passar de flesta datorer upp till 14 tum. Utvändigt har Antonia även två öppna fack där du till exempel kan förvara din vattenflaska eller solglasögon. Antonia har också justerbara axelremmar och ett litet handtag om du vill bära väskan i handen. Detta är en klassisk ryggsäck som bara kommer att bli finare ju mer du använder den. Vill du ha en korthållare som matchar din väska hittar du det här. Den här väskan är tillverkad av färgat läder. Tänk på att de naturliga oljorna i lädret kan göra att den tillfälligt släpper färg och orsakar fläckar på material i ljusare färger.",
-        "measurement": "27 x 45 x 14 cm"
+        "measurement": "27 x 45 x 14 cm",
+        "size": "One size"
     },
     {
         "id": 8,
         "name": "Noa",
         "thumbnail_image": "src/images/photos/Noa_product_image.png",
-        "image": "",
+        "image_back": "src/images/photos/Noa_back.png",
+        "image_side": "src/images/photos/Noa_side.png",
         "color": "Beige",
         "priceSEK": 1895.00,
         "description": "En löparryggsäck med rolltop-stängning. Utformad med justerbart midjeband och ficka för camelbak för maximal komfort under löpturer.",
-        "measurement": "25 x 38/56 x 13 cm"
+        "measurement": "25 x 38/56 x 13 cm",
+        "size": "One size"
     },
     {
         "id": 9,
         "name": "Iris",
         "thumbnail_image": "src/images/photos/Iris_product_image.png",
-        "image": "",
+        "image_back": "src/images/photos/Iris_back.png",
+        "image_side": "src/images/photos/Iris_side.png",
         "color": "Orange",
         "priceSEK": 3295.00,
         "description": "Iris är en klassisk och stilren tote bag, gjord av anilinfärgat full grain-läder från norra Europa. Väskan är ofodrad och rymmer upp till 15 L, samt har plats för de flesta datorer upp till 16 tum. Designad med breda handtag och en avtagbar axelrem, så att du kan bära den på flera sätt. I väskan finns en innerficka med dragkedja och en avtagbar nyckelrem där du kan fästa dina nycklar eller en liten innerväska. Det mjuka lädret har en matt finish som bara kommer att bli finare med tiden. Vill du ha en korthållare som matchar din väska hittar du det här. Den här väskan är tillverkad av färgat läder. Tänk på att de naturliga oljorna i lädret kan göra att den tillfälligt släpper färg och orsakar fläckar på material i ljusare färger.",
-        "measurement": "32 x 30 x 20 cm"
+        "measurement": "32 x 30 x 20 cm",
+        "size": "One size"
     },
     {
         "id": 10,
         "name": "Louie",
         "thumbnail_image": "src/images/photos/Louie_product_image.png",
-        "image": "",
+        "image_back": "src/images/photos/Louie_back.png",
+        "image_side": "src/images/photos/Louie_side.png",
         "color": "Black",
         "priceSEK": 1995.00,
         "description": "design",
-        "measurement": "27 x 40/60 x 16 cm"
+        "measurement": "27 x 40/60 x 16 cm",
+        "size": "One size"
     },
     {
         "id": 11,
         "name": "Jack",
-        "thumbnail_image": "src/images/photos/Jack Deep Green.png",
-        "image": "",
+        "thumbnail_image": "src/images/photos/Jack_deep_green.png",
+        "image_back": "src/images/photos/Jack_deep_green_back.png",
+        "image_side": "src/images/photos/Jack_green_side.png",
         "color": "Deep Green",
         "priceSEK": 1695.00,
         "description": "design",
-        "measurement": "26 x 40 x 16 cm"
+        "measurement": "26 x 40 x 16 cm",
+        "size": "One size"
     },
     {
         "id": 12,
         "name": "Aste",
         "thumbnail_image": "src/images/photos/Aste_product_image.png",
-        "image": "",
+        "image_back": "src/images/photos/Aste_back.png",
+        "image_side": "src/images/photos/Aste_side.png",
         "color": "Blue",
         "priceSEK": 595.00,
         "description": "design",
-        "measurement": "35 x 16 x 7 cm"
+        "measurement": "35 x 16 x 7 cm",
+        "size": "One size"
     }
 ]
