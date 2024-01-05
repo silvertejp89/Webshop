@@ -1,3 +1,5 @@
+@import "../base/typography.scss";
+@import "../base/colors.scss";
 * {
   max-width: 100%;
   margin: 0;
@@ -59,7 +61,7 @@
   height: 700px;
 }
 .item-10 {
-  font-size: 16px;
+  font-size: $base-font-size;
   display: flex;
   flex-direction: column;
   padding-top: 10%;
@@ -74,20 +76,20 @@
 }
 
 h1 {
-  font-family: "Barlow", sans-serif;
+  font-family: $barlow;
   font-weight: 300;
   padding-left: 20px;
 }
 p {
   font-size: 16px;
   padding-bottom: 10px;
-  font-family: "Inter", sans-serif;
-  color: #1e1e1e;
+  font-family: $inter;
+  color: $black;
   font-weight: 300;
   padding-left: 20px;
 }
 .grey-text {
-  color: #aeaeae;
+  color: $darkgrey;
   font-size: 12px;
   padding-bottom: 15px;
 }
