@@ -1,6 +1,3 @@
-//Ta bort objekt ur kundkorgen
-//plus och minus-knappar i kundkorgen
-//-----------------------------------------------
 //Uträkningar för totalt antal och totalt kostnad. 
 //anpassa koden efter de riktiga objekten. 
 
@@ -83,39 +80,54 @@ export function createHTMLMock(): void {
 
   createHTMLMock();
 
-  //andra createHTML ------------------------------------------------------------------------
+  //CART HTML------------------------------------------------------------------------
 export function createHTMLCart() {
-
-    // const container = document.querySelector(".container");
     cartContainer.innerHTML = "";
     
     for (let i = 0; i < cart.length; i++) {
       const card = document.createElement("article");
       card.classList.add("card2");
+
+      //Produktnamn
       const text = document.createElement("h3");
-      const amountText = document.createElement("h2");
-  
       card.appendChild(text);
       text.innerHTML = cart[i].name;
 
-      card.appendChild(amountText);
-      amountText.innerHTML = cart[i].amount;
+      //minska-mängd-knapp
+      const decreaseBtn = document.createElement("button");
+      decreaseBtn.innerHTML = "-"
+      decreaseBtn.addEventListener("click", () => {
+        decreaseAmount(i);
+      });
+      card.appendChild(decreaseBtn);
 
+      //öka-mängd-knapp
+      const increaseBtn = document.createElement("button");
+      increaseBtn.innerHTML = "+"
+      increaseBtn.addEventListener("click", () => {
+        increaseAmount(i);
+      });
+      card.appendChild(increaseBtn);
+
+      //mängd
+      const amountText = document.createElement("h2");
+      card.appendChild(amountText);
+      amountText.innerHTML = String(cart[i].amount);
+
+      //ta bort-knapp
       const removeBtn = document.createElement("button");
       removeBtn.innerHTML = "Ta bort";
       removeBtn.addEventListener("click", () => {
         deleteCartProduct(i);
-      }
-      );
-
+      });
       card.appendChild(removeBtn);
 
+      //Lägg card i container
       cartContainer.appendChild(card);
     }
   };
 
-
-  //knapp-funktion------------------------------
+  //LÄGG TILL-knapp-funktion------------------------------
   export function createCartProduct(i: number) {
 
     const id = mock[i].id;
@@ -151,7 +163,27 @@ export function createHTMLCart() {
     // console.log("Total amount :", totalAmount);
   };
   
-  export function deleteCartProduct(i) {
+  export function deleteCartProduct(i: number) {
     cart.splice(i, 1);
     createHTMLCart();
   }
+
+  export function decreaseAmount(i: number){
+
+    if (cart[i].amount > 1){
+      cart[i].amount --;
+      console.log(cart);
+      createHTMLCart();
+    } else {
+      deleteCartProduct(i);
+    };
+  }
+
+  export function increaseAmount(i: number){
+    cart[i].amount ++;
+    console.log(cart);
+    createHTMLCart();
+  } 
+
+
+  
