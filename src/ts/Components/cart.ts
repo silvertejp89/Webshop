@@ -1,4 +1,9 @@
-//Jobba på funktionen öka antal.
+//Ta bort objekt ur kundkorgen
+//plus och minus-knappar i kundkorgen
+//-----------------------------------------------
+//Uträkningar för totalt antal och totalt kostnad. 
+//anpassa koden efter de riktiga objekten. 
+
 
 import "../../scss/main.scss"
 
@@ -30,10 +35,20 @@ const mock: {id: number; name: string; thumbnail_image: string }[] = [
         id: 9,
         name: "Iris",
         thumbnail_image: "src/images/photos/Iris_product_image.png",
-    }
+    },
+    {
+      id: 10,
+      name: "Greta",
+      thumbnail_image: "src/images/photos/Iris_product_image.png",
+  },
+  {
+    id: 11,
+    name: "Chlaes",
+    thumbnail_image: "src/images/photos/Iris_product_image.png",
+}
 ];
 
-//enkel createHTML ------------------------------------------------------------------------
+//enkel createHTML kanske sedan kan heta createHTMLProducts?------------------------------
 export function createHTMLMock(): void {
 
     const container = document.querySelector(".container");
@@ -71,31 +86,51 @@ export function createHTMLCart() {
       const card = document.createElement("article");
       card.classList.add("card2");
       const text = document.createElement("h3");
+      const amountText = document.createElement("h2");
   
       card.appendChild(text);
-      container.appendChild(card);
       text.innerHTML = cart[i].name;
+
+      card.appendChild(amountText);
+      amountText.innerHTML = cart[i].amount;
+
+      container.appendChild(card);
     }
   };
-
 
 
   //knapp-funktion------------------------------
   export function createCartProduct(i: number) {
 
-    const productId = mock[i].id;
+    const id = mock[i].id;
     const name = mock[i].name;
     const thumbnail_image = mock[i].thumbnail_image;
+    //------------------------------------------------------------------------------
 
-    if (productIdid)
+    //Om id redan existerar i cart[] ska det inte skapas ett nytt objekt.
+    //dvs. loopa genom cart-listan och jämför med mock[i].id,
 
-    //Om id redan existerar i cart[] ska det inte skapas ett nytt objekt. 
-    //Då ska istället det existerande objektets amount plussa på med 1. Annars: 
-    const newCartProduct = new CartProduct(id, name, thumbnail_image)
+    let foundObject = null; 
+    cart.forEach((product) => {
+      if (product.id === id) {
+        foundObject = product;
+      }
+    });
 
-    cart.push(newCartProduct);
-    createHTMLCart();
-    console.log(createHTMLCart)
-    console.log("Din varukorg: ", cart);
+    if (foundObject) {
+      foundObject.amount++;
+      console.log("Objekt finns redan:", foundObject);
+      //gå in i carten och plussa på 1 i amount
+      console.log(foundObject.amount);
+      createHTMLCart();
+    } else {
+      const newCartProduct = new CartProduct(id, name, thumbnail_image)
 
+      cart.push(newCartProduct);
+      createHTMLCart();
+      console.log("Din varukorg: ", cart.length, cart);
+    }
+
+    // const totalAmount = cart.reduce((sum, product) => sum + product.amount. 0);
+    // console.log("Total amount :", totalAmount);
   };
