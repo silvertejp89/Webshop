@@ -12,54 +12,190 @@
 
     <script type="module" src="/src/ts/pages/home.ts"></script>
     <div class="container">
-      <nav>Navbar</nav>
-      <main>Main</main>
-      <div id="sidebar">Sidebar</div>
-      <div id="content1">Content1</div>
-      <div id="content2">Content2</div>
-      <div id="content3">Content3</div>
-      <div id="content4">Content4</div>
-      <footer>Footer</footer>
+      <div class="grid-item item-1">
+        <img
+          src="src/images/photos/png/Sandqvist_hero_3.png"
+          alt="Två personer som går upp för ett berg och bär Sandqvists ryggsäckar"
+        />
+      </div>
+      <div class="grid-item item-2">
+        <img
+          src="src/images/photos/png/Dante_product_image.png"
+          alt="Ryggsäck, design Dante i färg svart"
+        />
+      </div>
+      <div class="grid-item item-3">
+        <img
+          src="src/images/photos/png/Jack_product_image.png"
+          alt="Ryggsäck, design Jack i färgen gul och svart"
+        />
+      </div>
+      <div class="grid-item item-4">
+        <img
+          src="src/images/photos/png/Kurt_product_image.png"
+          alt="Ryggsäck, design Kurt i färgen lila"
+        />
+      </div>
+      <div class="grid-item item-5">
+        <img
+          src="src/images/photos/png/Tony_product_image.png"
+          alt="Ryggsäck, design Tony i färgen grön"
+        />
+      </div>
+      <div class="grid-item item-6">
+        <img src="src/images/photos/png/sandqvist_blog_2.png" alt="" />
+      </div>
+      <div class="grid-item item-7 text-container">
+        <p>
+          A mountain breakfast above the tree line, with Sandqvist founders
+          Sebastian Westin and Daniel Sandqvist.
+          <br /><br />
+          The Sonfjället national park has always been a great source of
+          inspiration for us at Sandqvist. Having a cabin nearby has made it
+          possible going on hikes; on skis during the winter and by foot during
+          the summer, spring and fall.
+          <br /><br />
+          At Sandqvist, the Nordic nature means everything. We pick up all our
+          ideas, inspiration, lust and ambition from the cold mountains, deep
+          forests and roaming waters.
+        </p>
+      </div>
+      <div class="grid-item item-8">
+        <img src="src/images/photos/png/Sandqvist_blog.png" alt="" />
+      </div>
+      <div class="grid-item item-9 text-container">
+        <p>
+          Sometimes we camp in a tent overnight, but this time, during late
+          fall, we decided to sleep in the cabin and get up really early so we
+          could meet the rising sun while having breakfast on the mountain. When
+          we began walking there wasn't much snow at all, but as we ascended
+          more and more covered the ground, until we were walking on a thick
+          windswept layer of snow. <br /><br />
+          We kept on walking for an hour or two, and when the first rays of
+          morning sun appeared above the peaks, we sat down in a sheltered
+          ravine and ate our breakfast with a scenic view, high above the tree
+          line.
+        </p>
+      </div>
+      <div class="grid-item item-10">
+        <h1>Fusion</h1>
+        <b></b>
+        <h1>Hike</h1>
+        <b></b>
+        <h1>Urban Outdoor</h1>
+        <b></b>
+        <h1>Everyday Originals</h1>
+        <br />
+        <p>Delivery & Returns</p>
+        <b></b>
+        <p>Payment</p>
+        <b></b>
+        <p>Sustainability</p>
+        <b></b>
+        <p>FAQ</p>
+        <b></b>
+        <p>Stores</p>
+        <b></b>
+        <p class="grey-text">CONTACT US</p>
+        <b></b>
+        <p>+1891989-11-91</p>
+        <b></b>
+        <p>info@logoipsum.com</p>
+      </div>
     </div>
-
     <style>
+      * {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 30px;
+      }
       .container {
         display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        grid-row-gap: 1px;
+        grid-column-gap: 7px;
+      }
+      .grid-item {
+        border: 0px solid;
+        padding: 0px;
+        gap: 0px;
+        grid-row-gap: 0px;
+      }
+      .item-1 {
+        grid-column-start: 1;
+        grid-column-end: span 2;
+        grid-row: span 7;
+        height: 700px;
+        margin-bottom: 7px;
+      }
+      .item-1 img,
+      .item-6 img,
+      .item-8 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .item-2,
+      .item-3,
+      .item-4,
+      .item-5 {
+        grid-row: span 2;
+      }
+
+      .item-2,
+      .item-4 {
+        grid-column: 1;
+      }
+      .item-3,
+      .item-5 {
+        grid-column: 2;
+      }
+
+      .item-6,
+      .item-7,
+      .item-8,
+      .item-9,
+      .item-10 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background-color: #ffff;
+        height: 700px;
+      }
+      .item-10 {
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        padding-top: 10%;
+        padding-left: 25px;
+      }
+      .text-container {
+        display: grid;
+        place-items: center;
         height: 100vh;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+        line-height: 1.3;
+        padding: 0 30px;
       }
-      nav {
-        background-color: blueviolet;
-        grid-area: nav;
+
+      h1 {
+        font-family: "Barlow", sans-serif;
+        font-weight: 300;
+        padding-left: 20px;
       }
-      main {
-        background-color: yellow;
-        grid-area: main;
+      p {
+        font-size: 16px;
+        padding-bottom: 10px;
+        font-family: "Inter", sans-serif;
+        color: #1e1e1e;
+        font-weight: 300;
+        padding-left: 20px;
       }
-      #sidebar {
-        background-color: brown;
-        grid-area: conent1;
-      }
-      #content1 {
-        background-color: aqua;
-      }
-      #content2 {
-        background-color: aquamarine;
-      }
-      #content3 {
-        background-color: black;
-      }
-      #content4 {
-        background-color: cadetblue;
-      }
-      footer {
-        background-color: teal;
-        grid-template-areas:
-          "nav nav nav nav"
-          "main main  main  sidebar"
-          "content1 content2 content3 sidebar"
-          "footer footer footer sidebar";
+      .grey-text {
+        color: #aeaeae;
+        font-size: 12px;
+        padding-bottom: 15px;
       }
     </style>
   </body>
