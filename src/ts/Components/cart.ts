@@ -37,6 +37,8 @@ const mock: {id: number; name: string; thumbnail_image: string }[] = [
 export function createHTMLMock(): void {
 
     const container = document.querySelector(".container");
+
+    //Använda "Non-null assertion operator" för att undvika squigglies? 
     
     container.innerHTML = "";
     for (let i = 0; i < mock.length; i++) {
@@ -64,6 +66,7 @@ export function createHTMLMock(): void {
 export function createHTMLCart() {
 
     const container = document.querySelector(".container");
+    
     for (let i = 0; i < cart.length; i++) {
       const card = document.createElement("article");
       card.classList.add("card2");
@@ -75,17 +78,24 @@ export function createHTMLCart() {
     }
   };
 
+
+
   //knapp-funktion------------------------------
   export function createCartProduct(i: number) {
 
-    const id = mock[i].id;
+    const productId = mock[i].id;
     const name = mock[i].name;
     const thumbnail_image = mock[i].thumbnail_image;
 
+    if (productIdid)
+
+    //Om id redan existerar i cart[] ska det inte skapas ett nytt objekt. 
+    //Då ska istället det existerande objektets amount plussa på med 1. Annars: 
     const newCartProduct = new CartProduct(id, name, thumbnail_image)
 
     cart.push(newCartProduct);
     createHTMLCart();
+    console.log(createHTMLCart)
     console.log("Din varukorg: ", cart);
 
   };
