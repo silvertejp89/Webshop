@@ -49,13 +49,19 @@ const mock: {id: number; name: string; thumbnail_image: string }[] = [
 ];
 
 //enkel createHTML kanske sedan kan heta createHTMLProducts?------------------------------
+// Sparar referensen till container-elementet för mock-produkter
+const mockContainer = document.querySelector(".mock-container");
+
+// Sparar referensen till container-elementet för varukorgen
+const cartContainer = document.querySelector(".cart-container");
+
 export function createHTMLMock(): void {
 
-    const container = document.querySelector(".container");
+    // const container = document.querySelector(".container");
 
     //Använda "Non-null assertion operator" för att undvika squigglies? 
     
-    container.innerHTML = "";
+    mockContainer.innerHTML = "";
     for (let i = 0; i < mock.length; i++) {
       const card = document.createElement("article");
       card.classList.add("card");
@@ -69,7 +75,7 @@ export function createHTMLMock(): void {
   
       card.appendChild(text);
       card.appendChild(submitBtn);
-      container.appendChild(card);
+      mockContainer.appendChild(card);
   
       text.innerHTML = mock[i].name;
     }
@@ -80,7 +86,8 @@ export function createHTMLMock(): void {
   //andra createHTML ------------------------------------------------------------------------
 export function createHTMLCart() {
 
-    const container = document.querySelector(".container");
+    // const container = document.querySelector(".container");
+    cartContainer.innerHTML = "";
     
     for (let i = 0; i < cart.length; i++) {
       const card = document.createElement("article");
@@ -94,7 +101,16 @@ export function createHTMLCart() {
       card.appendChild(amountText);
       amountText.innerHTML = cart[i].amount;
 
-      container.appendChild(card);
+      const removeBtn = document.createElement("button");
+      removeBtn.innerHTML = "Ta bort";
+      removeBtn.addEventListener("click", () => {
+        deleteCartProduct(i);
+      }
+      );
+
+      card.appendChild(removeBtn);
+
+      cartContainer.appendChild(card);
     }
   };
 
@@ -134,3 +150,8 @@ export function createHTMLCart() {
     // const totalAmount = cart.reduce((sum, product) => sum + product.amount. 0);
     // console.log("Total amount :", totalAmount);
   };
+  
+  export function deleteCartProduct(i) {
+    cart.splice(i, 1);
+    createHTMLCart();
+  }
