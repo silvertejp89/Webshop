@@ -13,36 +13,42 @@ export class CartProduct {
     name: string;
     thumbnail_image: string;
     amount: number;
+    price: number;
   
-    constructor(id: number, name: string, thumbnail_image: string, amount: number = 1) {
+    constructor(id: number, name: string, thumbnail_image: string, amount: number = 1, price: number) {
       this.id = id;
       this.name = name;
       this.thumbnail_image = thumbnail_image;
       this.amount = amount; 
+      this.price = price;
     }
   }
 
 //mock-data-------------------------------------------------------------------------
-const mock: {id: number; name: string; thumbnail_image: string }[] = [
+const mock: {id: number; name: string; thumbnail_image: string; price: number}[] = [
     {
         id: 8,
         name: "Noa",
         thumbnail_image: "src/images/photos/Noa_product_image.png",
+        price: 10,
     },
     {
         id: 9,
         name: "Iris",
         thumbnail_image: "src/images/photos/Iris_product_image.png",
+        price: 20,
     },
     {
       id: 10,
       name: "Greta",
       thumbnail_image: "src/images/photos/Iris_product_image.png",
+      price: 30,
   },
   {
     id: 11,
     name: "Chlaes",
     thumbnail_image: "src/images/photos/Iris_product_image.png",
+    price: 40,
 }
 ];
 
@@ -62,6 +68,9 @@ export function createHTMLMock(): void {
       card.classList.add("card");
       const text = document.createElement("h3");
 
+      const priceText = document.createElement("h4");
+    
+
       const submitBtn = document.createElement("button");
       submitBtn.innerHTML = "Lägg till";
       submitBtn.addEventListener("click", () => {
@@ -69,10 +78,12 @@ export function createHTMLMock(): void {
       });
   
       card.appendChild(text);
+      card.appendChild(priceText);
       card.appendChild(submitBtn);
       mockContainer.appendChild(card);
   
       text.innerHTML = mock[i].name;
+      priceText.innerHTML = String(mock[i].price) + "kr";
     }
   };
 
@@ -125,6 +136,8 @@ export function createHTMLCart() {
     }
     createHTMLMock();
     calculateAmount();
+    amountCounter.textContent = `${totalAmount}` + " produkter";
+    calculateTotalPrice()
   };
 
   //LÄGG TILL-knapp-funktion------------------------------
@@ -185,12 +198,26 @@ export function createHTMLCart() {
     createHTMLCart();
   } 
 
+const amountCounter = document.querySelector(".amountCounter");
+console.log(amountCounter);
+
+let totalAmount = 0;
+let totalPrice = 0;
 
 export function calculateAmount() {
-  let totalAmount = 0;
+  totalAmount = 0;
   for (let i = 0; i < cart.length; i++) {
     totalAmount += cart[i].amount;
   }
-  console.log("total: ", totalAmount);
 };
+
+export function calculateTotalPrice() {
+  totalPrice = 0;
+  for (let i = 0; i < cart.length; i++) {
+    totalPrice += cart[i].amount * cart[i].price;
+    console.log("total price:" ,totalPrice);
+  }
+};
+
+
 
