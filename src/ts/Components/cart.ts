@@ -1,5 +1,6 @@
 //Uträkningar för totalt antal och totalt kostnad. 
 //anpassa koden efter de riktiga objekten. 
+//Ska carten sparas i localstorage? antagligen. 
 
 
 import "../../scss/main.scss"
@@ -45,16 +46,13 @@ const mock: {id: number; name: string; thumbnail_image: string }[] = [
 }
 ];
 
-//enkel createHTML kanske sedan kan heta createHTMLProducts?------------------------------
-// Sparar referensen till container-elementet för mock-produkter
-const mockContainer = document.querySelector(".mock-container");
 
-// Sparar referensen till container-elementet för varukorgen
+const mockContainer = document.querySelector(".mock-container");
 const cartContainer = document.querySelector(".cart-container");
 
-export function createHTMLMock(): void {
 
-    // const container = document.querySelector(".container");
+//enkel createHTML kanske sedan kan heta createHTMLProducts?------------------------------
+export function createHTMLMock(): void {
 
     //Använda "Non-null assertion operator" för att undvika squigglies? 
     
@@ -125,6 +123,8 @@ export function createHTMLCart() {
       //Lägg card i container
       cartContainer.appendChild(card);
     }
+    createHTMLMock();
+    calculateAmount();
   };
 
   //LÄGG TILL-knapp-funktion------------------------------
@@ -158,11 +158,11 @@ export function createHTMLCart() {
       createHTMLCart();
       console.log("Din varukorg: ", cart.length, cart);
     }
-
-    // const totalAmount = cart.reduce((sum, product) => sum + product.amount. 0);
-    // console.log("Total amount :", totalAmount);
   };
   
+
+
+
   export function deleteCartProduct(i: number) {
     cart.splice(i, 1);
     createHTMLCart();
@@ -186,4 +186,11 @@ export function createHTMLCart() {
   } 
 
 
-  
+export function calculateAmount() {
+  let totalAmount = 0;
+  for (let i = 0; i < cart.length; i++) {
+    totalAmount += cart[i].amount;
+  }
+  console.log("total: ", totalAmount);
+};
+
