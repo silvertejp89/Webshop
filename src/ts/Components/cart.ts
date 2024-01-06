@@ -84,6 +84,7 @@ export function createHTMLMock(): void {
   
       text.innerHTML = mock[i].name;
       priceText.innerHTML = String(mock[i].price) + "kr";
+
     }
   };
 
@@ -92,7 +93,8 @@ export function createHTMLMock(): void {
   //CART HTML------------------------------------------------------------------------
 export function createHTMLCart() {
     cartContainer.innerHTML = "";
-    
+
+
     for (let i = 0; i < cart.length; i++) {
       const card = document.createElement("article");
       card.classList.add("card2");
@@ -118,10 +120,10 @@ export function createHTMLCart() {
       });
       card.appendChild(increaseBtn);
 
-      //mängd
+      //mängd och totalpris per produkttyp
       const amountText = document.createElement("h2");
       card.appendChild(amountText);
-      amountText.innerHTML = String(cart[i].amount);
+      amountText.innerHTML = String(cart[i].amount) + " st, " + String((cart[i].price)*(cart[i].amount)) + "kr";
 
       //ta bort-knapp
       const removeBtn = document.createElement("button");
@@ -130,14 +132,21 @@ export function createHTMLCart() {
         deleteCartProduct(i);
       });
       card.appendChild(removeBtn);
-
       //Lägg card i container
       cartContainer.appendChild(card);
+           
     }
     createHTMLMock();
+    //Rubrik 
     calculateAmount();
-    amountCounter.textContent = `${totalAmount}` + " produkter";
-    calculateTotalPrice()
+    
+    calculateTotalPrice();
+
+    // dessa har hittats med queryselector längst ner. 
+    amountCounter.textContent = `${totalAmount}` + " produkter, ";
+    priceCounter.textContent = `${totalPrice}` + " kr";
+
+    
   };
 
   //LÄGG TILL-knapp-funktion------------------------------
@@ -146,6 +155,8 @@ export function createHTMLCart() {
     const id = mock[i].id;
     const name = mock[i].name;
     const thumbnail_image = mock[i].thumbnail_image;
+    const amount = mock[i].amount;
+    const price = mock[i].price;
     //------------------------------------------------------------------------------
 
     //Om id redan existerar i cart[] ska det inte skapas ett nytt objekt.
@@ -161,11 +172,10 @@ export function createHTMLCart() {
     if (foundObject) {
       foundObject.amount++;
       console.log("Objekt finns redan:", foundObject);
-      //gå in i carten och plussa på 1 i amount
       console.log(foundObject.amount);
       createHTMLCart();
     } else {
-      const newCartProduct = new CartProduct(id, name, thumbnail_image)
+      const newCartProduct = new CartProduct(id, name, thumbnail_image, amount, price)
 
       cart.push(newCartProduct);
       createHTMLCart();
@@ -199,6 +209,7 @@ export function createHTMLCart() {
   } 
 
 const amountCounter = document.querySelector(".amountCounter");
+const priceCounter = document.querySelector(".priceCounter");
 console.log(amountCounter);
 
 let totalAmount = 0;
@@ -213,7 +224,13 @@ export function calculateAmount() {
 
 export function calculateTotalPrice() {
   totalPrice = 0;
+
+
   for (let i = 0; i < cart.length; i++) {
+    console.log("cart amount: ",cart[i].amount)
+    console.log("cart price: ",cart[i].price)
+
+
     totalPrice += cart[i].amount * cart[i].price;
     console.log("total price:" ,totalPrice);
   }
