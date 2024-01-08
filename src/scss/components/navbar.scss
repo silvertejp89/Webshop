@@ -44,6 +44,8 @@
     align-items: center;
     justify-content: center;
     flex: 1 1 0%;
+
+    cursor: pointer;
 }
 
 .navbar_logo__container img {
@@ -66,3 +68,42 @@
     cursor: pointer;
 }
 
+
+@media screen and (max-width: 880px) {
+
+    .navbar_container {
+        .navbar_left__container {
+            display: none;
+        }
+        .navbar_right__container {
+            
+            a {
+                display: none;
+            }
+        }
+    }
+    
+    .navbar_logo__container {
+        justify-content: flex-start;
+    }
+    .navbar_hamburger__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 4px;
+        img {
+            max-width: 24px;
+            max-height: 24px;
+        }
+    }
+
+    .navbar_icons__container {
+        display: flex;
+        margin-right: 24px;
+
+        img {
+            max-width: 24px;
+            max-height: 48px;
+        }
+    }
+}

@@ -1,5 +1,7 @@
 import "../../scss/main.scss";
 
+// Function to generate navbar with content in DOM
+
 function createNavbar(): void {
   const navbarWrapper = document.getElementById("navbar_wrapper");
   if (!navbarWrapper) {
@@ -50,7 +52,7 @@ function createNavbar(): void {
   hamburgerMenu.classList.add("navbar_hamburger__container");
 
   const hamburgerSvg = document.createElement("img");
-  hamburgerSvg.src = "src/images/icons/svg/Burger.svg";
+  hamburgerSvg.src = "src/images/icons/svg/Hamburger Icon.svg";
   hamburgerSvg.alt = "Hamburger menu";
   hamburgerMenu.appendChild(hamburgerSvg);
 
@@ -66,6 +68,48 @@ function createNavbar(): void {
   navbar.appendChild(hamburgerMenu);
 
   navbarWrapper.appendChild(navbar);
+
+  // On click event listeners
+
+  logoSection.addEventListener("click", () => {
+    window.location.href = "/";
+  });
 }
+
+// Create modal that opens when hamburger is clicked
+
+const hamburgerOverlay = document.createElement("div");
+hamburgerOverlay.id = "hamburger_overlay";
+hamburgerOverlay.style.display = "none";
+document.body.appendChild(hamburgerOverlay);
+
+const hamburgerModal = document.createElement("div");
+hamburgerModal.classList.add("hamburger_menu__closed");
+document.body.appendChild(hamburgerModal);
+
+const openHamburgerMenu = document.querySelector(
+  ".navbar_hamburger__container"
+);
+document.addEventListener("click", (event) => {
+  if (event.target?.closest(".navbar_hamburger__container")) {
+    console.log("Hamburger menu clicked");
+    hamburgerOverlay.style.display = "block";
+    hamburgerModal.classList.add("hamburger_menu__open");
+    document.body.classList.add("body_hamburger__open");
+  }
+});
+
+const closeHamburgerIcon = document.createElement("img");
+closeHamburgerIcon.src = "src/images/icons/svg/cross.svg";
+closeHamburgerIcon.alt = "Close menu";
+closeHamburgerIcon.classList.add("hamburger_menu__cross");
+
+hamburgerModal.appendChild(closeHamburgerIcon);
+
+closeHamburgerIcon.addEventListener("click", () => {
+  hamburgerOverlay.style.display = "none";
+  hamburgerModal.classList.remove("hamburger_menu__open");
+  document.body.classList.remove("body_hamburger__open");
+});
 
 document.addEventListener("DOMContentLoaded", createNavbar);
