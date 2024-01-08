@@ -1,28 +1,12 @@
-//Uträkningar för totalt antal och totalt kostnad. 
 //anpassa koden efter de riktiga objekten. 
 //Ska carten sparas i localstorage? antagligen. 
+
+import { CartProduct } from "../models/CartProduct";
 
 
 import "../../scss/main.scss"
 
 export let cart: CartProduct[] = [];
-
-//förenklad klass--------------------------------------------------------------
-export class CartProduct {
-    id: number;
-    name: string;
-    thumbnail_image: string;
-    amount: number;
-    price: number;
-  
-    constructor(id: number, name: string, thumbnail_image: string, amount: number = 1, price: number) {
-      this.id = id;
-      this.name = name;
-      this.thumbnail_image = thumbnail_image;
-      this.amount = amount; 
-      this.price = price;
-    }
-  }
 
 //mock-data-------------------------------------------------------------------------
 const mock: {id: number; name: string; thumbnail_image: string; price: number}[] = [
@@ -159,6 +143,8 @@ export function createHTMLCart() {
     const price = mock[i].price;
     //------------------------------------------------------------------------------
 
+    //TODO: testa todo-funktionen
+
     //Om id redan existerar i cart[] ska det inte skapas ett nytt objekt.
     //dvs. loopa genom cart-listan och jämför med mock[i].id,
 
@@ -182,8 +168,6 @@ export function createHTMLCart() {
       console.log("Din varukorg: ", cart.length, cart);
     }
   };
-  
-
 
 
   export function deleteCartProduct(i: number) {

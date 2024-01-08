@@ -19,3 +19,20 @@
 //       this.amount = amount;
 //     }
 //   }
+
+//förenklad klass--------------------------------------------------------------
+export class CartProduct {
+    id: number;
+    name: string;
+    thumbnail_image: string;
+    amount: number;
+    price: number;
+  
+    constructor(id: number, name: string, thumbnail_image: string, amount: number = 1, price: number) {
+      this.id = id;
+      this.name = name;
+      this.thumbnail_image = thumbnail_image;
+      this.amount = amount; 
+      this.price = price;
+    }
+  }
