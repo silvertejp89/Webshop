@@ -3,7 +3,6 @@
 import "../../scss/main.scss"
 import { CartProduct } from "../models/CartProduct";
 
-
 export let cart: CartProduct[] = []
 
 //mock-data-------------------------------------------------------------------------
@@ -62,11 +61,9 @@ const mock: {id: number; name: string; thumbnail_image: string; image_back: stri
 
 const mockContainer = document.querySelector(".mock-container");
 const cartContainer = document.querySelector(".cart-container");
-
   
 export function createHTMLProducts(): void {
 
-    //Använda "Non-null assertion operator" för att undvika squigglies? 
     if(!mockContainer) return;
     mockContainer.innerHTML = "";
     for (let i = 0; i < mock.length; i++) {
@@ -76,7 +73,6 @@ export function createHTMLProducts(): void {
 
       const priceText = document.createElement("h4");
     
-
       const submitBtn = document.createElement("button");
       submitBtn.innerHTML = "Lägg till";
       submitBtn.addEventListener("click", () => {
@@ -87,7 +83,7 @@ export function createHTMLProducts(): void {
       card.appendChild(priceText);
       card.appendChild(submitBtn);
       mockContainer?.appendChild(card);
-  
+
       text.innerHTML = mock[i].name;
       priceText.innerHTML = String(mock[i].priceSEK) + " kr";
 
@@ -144,7 +140,7 @@ export function createHTMLCart() {
            
     }
     createHTMLProducts();
-    //Rubrik 
+
     calculateAmount();
     
     calculateTotalPrice();
@@ -161,15 +157,8 @@ export function createHTMLCart() {
     const id = mock[i].id;
     const name = mock[i].name;
     const thumbnail_image = mock[i].thumbnail_image;
-    // const amount = mock[i].amount;
     const price = mock[i].priceSEK;
     const color = mock[i].color;
-    //------------------------------------------------------------------------------
-
-    //TODO: testa todo-funktionen
-
-    //Om id redan existerar i cart[] ska det inte skapas ett nytt objekt.
-    //dvs. loopa genom cart-listan och jämför med mock[i].id,
 
     let foundProductInCart = false;
     cart.forEach((product, i) => {
@@ -188,11 +177,13 @@ export function createHTMLCart() {
   };
 
 
+  //Delete product------------------------------------
   export function deleteCartProduct(i: number) {
     cart.splice(i, 1);
     createHTMLCart();
   }
 
+  //Decrease amount-------------------------------------
   export function decreaseAmount(i: number){
 
     if (cart[i].amount > 1){
@@ -204,39 +195,41 @@ export function createHTMLCart() {
     };
   }
 
+  //Increase amount-------------------------------------------
   export function increaseAmount(i: number){
     cart[i].amount ++;
     console.log(cart);
     createHTMLCart();
   } 
 
-const amountCounter = document.querySelector(".amountCounter");
-const priceCounter = document.querySelector(".priceCounter");
-console.log(amountCounter);
+  //Total amount & total price---------------------------------
+  const amountCounter = document.querySelector(".amountCounter");
+  const priceCounter = document.querySelector(".priceCounter");
+  console.log(amountCounter);
 
-let totalAmount = 0;
-let totalPrice = 0;
+  let totalAmount = 0;
+  let totalPrice = 0;
 
-export function calculateAmount() {
-  totalAmount = 0;
-  for (let i = 0; i < cart.length; i++) {
-    totalAmount += cart[i].amount;
-  }
-};
+  export function calculateAmount() {
+    totalAmount = 0;
+    for (let i = 0; i < cart.length; i++) {
+      totalAmount += cart[i].amount;
+    }
+  };
 
-export function calculateTotalPrice() {
-  totalPrice = 0;
-
-
-  for (let i = 0; i < cart.length; i++) {
-    console.log("cart amount: ",cart[i].amount)
-    console.log("cart price: ",cart[i].priceSEK)
+  export function calculateTotalPrice() {
+    totalPrice = 0;
 
 
-    totalPrice += cart[i].amount * cart[i].priceSEK;
-    console.log("total price:" ,totalPrice);
-  }
-};
+    for (let i = 0; i < cart.length; i++) {
+      console.log("cart amount: ",cart[i].amount)
+      console.log("cart price: ",cart[i].priceSEK)
+
+
+      totalPrice += cart[i].amount * cart[i].priceSEK;
+      console.log("total price:" ,totalPrice);
+    }
+  };
 
 
 
