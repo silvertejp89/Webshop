@@ -3,11 +3,102 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Checkout</title>
+    <title>Checkout form</title>
   </head>
   <body>
-    <form>
-      <input type="text" name="postnummer" placeholder="postnummer" />
+    <form class="alternativ-form">
+      <h3>Postnummer</h3>
+      <input type="text" name="postnummer" placeholder=" Ange postnummer" />
+      <button>Fortsätt</button>
+      <li>
+        <h3>Leveransalternativ</h3>
+        <ul>
+          <input type="radio" />
+          Postnord
+          <p>5-8 arbetsdagar</p>
+          <p>svanenmärkt</p>
+        </ul>
+        <ul>
+          <input type="radio" />
+          Postlåda/dörr
+          <p>5-8 arbetsdagar</p>
+        </ul>
+        <ul>
+          <input type="radio" />
+          Instabox
+          <p>5-8 arbetsdagar</p>
+        </ul>
+      </li>
     </form>
+    <form class="uppgifter-form">
+      <h3>Dina uppgifter</h3>
+      <p>Adressen ska vara i Sverige</p>
+      <li>
+        <ul>
+          <input type="text" name="mail" placeholder=" Mejladress" />
+        </ul>
+      </li>
+
+      <ul>
+        <input type="text" name="postnummer" placeholder=" Postnummer" />
+      </ul>
+      <ul>
+        <input
+          type="text"
+          name="personnummer"
+          placeholder=" Personnummer (frivilligt)"
+        />
+      </ul>
+      <ul>
+        <input type="text" name="förnamn" placeholder="Förnamn" />
+        <input type="text" name="efternman" placeholder="Efternamn" />
+      </ul>
+      <ul>
+        <input type="text" name="adress" placeholder="Adress" />
+      </ul>
+      <ul>
+        <input type="text" name="ort" placeholder="ort" />
+      </ul>
+      <ul>
+        <input type="text" name="nummer" placeholder="mobilnummer" />
+      </ul>
+      <button>Avbryt</button><button>Fortsätt</button>
+    </form>
+
+    <form class="leverans-form">
+      <h3>Leverans</h3>
+      <p>Adressen ska vara i Sverige</p>
+      <li>
+        <ul>
+          <input type="text" name="mail" placeholder=" Mejladress" />
+        </ul>
+      </li>
+      <ul>
+        <input type="text" name="postnummer" placeholder=" Postnummer" />
+      </ul>
+      <ul>
+        <input
+          type="text"
+          name="personnummer"
+          placeholder=" Personnummer (frivilligt)"
+        />
+      </ul>
+      <ul>
+        <input type="text" name="förnamn" placeholder="Förnamn" />
+        <input type="text" name="efternman" placeholder="Efternamn" />
+      </ul>
+      <ul>
+        <input type="text" name="adress" placeholder="Adress" />
+      </ul>
+      <ul>
+        <input type="text" name="ort" placeholder="ort" />
+      </ul>
+      <ul>
+        <input type="text" name="nummer" placeholder="mobilnummer" />
+      </ul>
+      <button>Avbryt</button><button>Fortsätt</button>
+    </form>
+
+    <style></style>
   </body>
 </html>
