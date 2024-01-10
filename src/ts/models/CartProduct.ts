@@ -7,16 +7,16 @@ export class CartProduct {
     thumbnail_image: string;
     color: string;
     priceSEK: number;
-    // size: string;
+    size: string;
     amount: number;
   
-    constructor(id: number, name: string, thumbnail_image: string, color: string, priceSEK: number, amount: number = 1) {
+    constructor(id: number, name: string, thumbnail_image: string, color: string, priceSEK: number, size: string, amount: number = 1) {
       this.id = id;
       this.name = name;
       this.thumbnail_image = thumbnail_image;
       this.color = color;
       this.priceSEK = priceSEK;
-    //   this.size = size; //glöm inte att lägga till o rad 13 också.
+      this.size = size; //glöm inte att lägga till o rad 13 också.
       this.amount = amount;
     }
   }

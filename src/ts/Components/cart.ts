@@ -1,4 +1,3 @@
-//Spara carten i localstorage
 //anpassa html-efter design
 
 import "../../scss/main.scss"
@@ -113,15 +112,26 @@ export function createHTMLCart() {
   if(!cartContainer) return;
     cartContainer.innerHTML = "";
 
-
     for (let i = 0; i < cart.length; i++) {
+
+      console.log("hejsan svejsan ", cart[i]);
       const card = document.createElement("article");
       card.classList.add("card2");
 
+      //Thumnail-bild
+      const thumnailImage = document.createElement("img");
+      card.appendChild(thumnailImage);
+      thumnailImage.innerHTML = cart[i].thumbnail_image;
+
       //Produktnamn
+      const productName = document.createElement("h2");
+      card.appendChild(productName);
+      productName.innerHTML = cart[i].name
+
+      //Färg och storlek
       const text = document.createElement("h3");
       card.appendChild(text);
-      text.innerHTML = cart[i].name;
+      text.innerHTML = cart[i].color + "/" + cart[i].size;
 
       //minska-mängd-knapp
       const decreaseBtn = document.createElement("button");
@@ -142,7 +152,7 @@ export function createHTMLCart() {
       card.appendChild(increaseBtn);
 
       //mängd och totalpris per produkttyp
-      const amountText = document.createElement("h2");
+      const amountText = document.createElement("h3");
       card.appendChild(amountText);
       amountText.innerHTML = String(cart[i].amount) + " st, " + String((cart[i].priceSEK)*(cart[i].amount)) + "kr";
 
@@ -178,6 +188,7 @@ export function createHTMLCart() {
     const thumbnail_image = mock[i].thumbnail_image;
     const price = mock[i].priceSEK;
     const color = mock[i].color;
+    const size = mock[i].size;
 
     let foundProductInCart = false;
     cart.forEach((product, i) => {
@@ -188,13 +199,12 @@ export function createHTMLCart() {
     });
 
     if (!foundProductInCart) {
-      const newCartProduct = new CartProduct(id, name, thumbnail_image, color, price)
+      const newCartProduct = new CartProduct(id, name, thumbnail_image, color, price, size);
       cart.push(newCartProduct);
       console.log("Din varukorg: ", cart.length, cart);
     } 
     createHTMLCart();
   };
-
 
   //Delete product------------------------------------
   export function deleteCartProduct(i: number) {
