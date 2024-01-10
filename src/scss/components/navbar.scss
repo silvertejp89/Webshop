@@ -7,6 +7,15 @@
     box-sizing: border-box;
 }
 
+
+#navbar_wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: transform 0.4s;
+}
+
 .navbar_container {
     display: flex;
     justify-content: space-between;
@@ -71,6 +80,10 @@
 
 @media screen and (max-width: 880px) {
 
+    #navbar_wrapper {
+        position: fixed;
+    }
+
     .navbar_container {
         .navbar_left__container {
             display: none;
@@ -106,4 +119,18 @@
             max-height: 48px;
         }
     }
+}
+
+// Scroll function styling
+
+.menu-open {
+    overflow: hidden;
+}
+
+.scroll-down #navbar_wrapper {
+    transform: translate3d(0, -100%, 0);
+}
+
+.scroll-up #navbar_wrapper {
+    transform: none;
 }

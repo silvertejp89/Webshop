@@ -133,10 +133,26 @@ function createHamburgerOpen(): void {
   hamburgerNavLinksList.classList.add("hamburger_link__list");
 
   const hamburgerNavLinks = ["Contact us", "Collections", "Sustainability"];
+
   for (const text of hamburgerNavLinks) {
     const link = document.createElement("a");
     link.href = `#${text.toLowerCase().replace(/\s/g, "-")}`;
     link.textContent = text;
+
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      if (text === "Collections") {
+        hamburgerCollectionLinks.style.display = "flex";
+      } else {
+        hamburgerCollectionLinks.style.display = "none";
+      }
+      hamburgerNavLinksList.querySelectorAll("a").forEach((link) => {
+        link.classList.remove("link_clicked");
+      });
+      link.classList.add("link_clicked");
+    });
+
     hamburgerNavLinksList.appendChild(link);
   }
 
@@ -187,4 +203,35 @@ function createHamburgerOpen(): void {
     document.body.classList.remove("body_hamburger__open");
   });
 }
+
+// Nav bar dissapears on scroll
+
+const scrollUp = "scroll-up";
+const scrollDown = "scroll-down";
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+  if (currentScroll <= 0) {
+    document.body.classList.remove(scrollUp);
+    return;
+  }
+  if (
+    currentScroll > lastScroll &&
+    !document.body.classList.contains(scrollDown)
+  ) {
+    //Scrolling down
+    document.body.classList.remove(scrollUp);
+    document.body.classList.add(scrollDown);
+  } else if (
+    currentScroll < lastScroll &&
+    document.body.classList.contains(scrollDown)
+  ) {
+    //Scrolling down
+    document.body.classList.remove(scrollDown);
+    document.body.classList.add(scrollUp);
+  }
+  lastScroll = currentScroll;
+});
+
 document.addEventListener("DOMContentLoaded", createNavbar);
