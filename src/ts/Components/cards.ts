@@ -5,6 +5,9 @@ import "../../scss/main.scss";
 function createProductCard(product: any): HTMLElement {
   const cardContainer = document.createElement("div");
   cardContainer.className = "product_card";
+  cardContainer.addEventListener("click", () => {
+    location.href = "index.html?id=" + product.id;
+  });
 
   const imageContainer = document.createElement("div");
   imageContainer.className = "product_image__container";
@@ -54,44 +57,44 @@ function createProductCard(product: any): HTMLElement {
 
 // Function to fetch 4 random products from products.json async
 
-// async function fetchDataAndCreateCards() {
-//   try {
-//     const response = await fetch("src/data/products.json");
-//     if (!response.ok) {
-//       throw new Error("Failed to fetch data");
-//     }
+async function fetchDataAndCreateCards() {
+  try {
+    const response = await fetch("src/data/products.json");
+    if (!response.ok) {
+      throw new Error("Failed to fetch data");
+    }
 
-//     const data = await response.json();
-//     console.log("Fetched data:", data);
+    const data = await response.json();
+    console.log("Fetched data:", data);
 
-//     for (let i = data.length - 1; i > 0; i--) {
-//       const j = Math.floor(Math.random() * (i + 1));
-//       [data[i], data[j]] = [data[j], data[i]];
-//     }
+    for (let i = data.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [data[i], data[j]] = [data[j], data[i]];
+    }
 
-//     for (let i = 0; i < Math.min(4, data.length); i++) {
-//       const productCard = createProductCard(data[i]);
-//       const root = document.getElementById("root");
-//       root.appendChild(productCard);
-//     }
-//   } catch (error) {
-//     console.error("Error fetching data:", error);
-//   }
-// }
+    for (let i = 0; i < Math.min(4, data.length); i++) {
+      const productCard = createProductCard(data[i]);
+      const root = document.getElementById("root");
+      root?.appendChild(productCard);
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
 
-// fetchDataAndCreateCards();
+fetchDataAndCreateCards();
 
 // Function to fetch all products in list
 
-fetch("src/data/products.json")
-  .then((response) => response.json())
-  .then((data) => {
-    // Loop through the products and create product cards
-    for (const product of data) {
-      const productCard = createProductCard(product);
-      // Append the product card to a container in the DOM
-      const root = document.getElementById("root");
-      root.appendChild(productCard);
-    }
-  })
-  .catch((error) => console.error("Error fetching data:", error));
+// fetch("src/data/products.json")
+//   .then((response) => response.json())
+//   .then((data: Product[]) => {
+//     // Loop through the products and create product cards
+//     for (const product of data) {
+//       const productCard = createProductCard(product);
+//       // Append the product card to a container in the DOM
+//       const root = document.getElementById("root");
+//       root?.appendChild(productCard);
+//     }
+//   })
+//   .catch((error) => console.error("Error fetching data:", error));
