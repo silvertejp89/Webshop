@@ -250,5 +250,9 @@ export function createHTMLCart() {
     }
   };
 
+  //Hämtar cart från localstorage när sidan laddas. 
+  window.addEventListener("load", () => {
+    loadCartFromLocalStorage();
+  })
 
 
