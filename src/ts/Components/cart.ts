@@ -119,6 +119,8 @@ export function createHTMLCart() {
       const thumnailImage = document.createElement("img");
       card.appendChild(thumnailImage);
       thumnailImage.src = cart[i].thumbnail_image;
+      thumnailImage.classList.add("thumnail-image");
+      
 
       //Produktnamn
       const productName = document.createElement("h2");
