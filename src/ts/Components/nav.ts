@@ -74,42 +74,117 @@ function createNavbar(): void {
   logoSection.addEventListener("click", () => {
     window.location.href = "/";
   });
+
+  createHamburgerOpen();
 }
 
-// Create modal that opens when hamburger is clicked
+function createHamburgerOpen(): void {
+  // Create modal that opens when hamburger is clicked
 
-const hamburgerOverlay = document.createElement("div");
-hamburgerOverlay.id = "hamburger_overlay";
-hamburgerOverlay.style.display = "none";
-document.body.appendChild(hamburgerOverlay);
+  const hamburgerOverlay = document.createElement("div");
+  hamburgerOverlay.id = "hamburger_overlay";
+  hamburgerOverlay.style.display = "none";
+  document.body.appendChild(hamburgerOverlay);
 
-const hamburgerModal = document.createElement("div");
-hamburgerModal.classList.add("hamburger_menu__closed");
-document.body.appendChild(hamburgerModal);
+  const hamburgerModal = document.createElement("div");
+  hamburgerModal.classList.add("hamburger_menu__closed");
+  document.body.appendChild(hamburgerModal);
 
-const openHamburgerMenu = document.querySelector(
-  ".navbar_hamburger__container"
-);
-document.addEventListener("click", (event) => {
-  if (event.target?.closest(".navbar_hamburger__container")) {
+  const openHamburgerMenu = document.querySelector(
+    ".navbar_hamburger__container"
+  );
+
+  openHamburgerMenu?.addEventListener("click", () => {
     console.log("Hamburger menu clicked");
     hamburgerOverlay.style.display = "block";
     hamburgerModal.classList.add("hamburger_menu__open");
     document.body.classList.add("body_hamburger__open");
+    //}
+  });
+
+  const hamburgerOpenNav = document.createElement("div");
+  hamburgerOpenNav.classList.add("hamburger_nav__container");
+
+  const hamburgerNavLogo = document.createElement("div");
+  hamburgerNavLogo.classList.add("navbar_logo__container");
+
+  const hamburgerLogoImage = document.createElement("img");
+  hamburgerLogoImage.src = "src/images/photos/png/sandqvist_logo.png";
+  hamburgerLogoImage.alt = "Sandqvist Logo";
+
+  const searchSvg = document.createElement("img");
+  searchSvg.src = "src/images/icons/svg/Search.svg";
+  searchSvg.alt = "Search";
+
+  const cartSvg = document.createElement("img");
+  cartSvg.src = "src/images/icons/svg/shoppingbag.svg";
+  cartSvg.alt = "Cart";
+
+  const closeHamburgerIcon = document.createElement("img");
+  closeHamburgerIcon.src = "src/images/icons/svg/cross.svg";
+  closeHamburgerIcon.alt = "Close menu";
+
+  const hamburgerNavIcons = document.createElement("div");
+  hamburgerNavIcons.classList.add("hamburger_menu__icons");
+
+  closeHamburgerIcon.classList.add("hamburger_menu__cross");
+
+  const hamburgerNavLinksList = document.createElement("div");
+  hamburgerNavLinksList.classList.add("hamburger_link__list");
+
+  const hamburgerNavLinks = ["Contact us", "Collections", "Sustainability"];
+  for (const text of hamburgerNavLinks) {
+    const link = document.createElement("a");
+    link.href = `#${text.toLowerCase().replace(/\s/g, "-")}`;
+    link.textContent = text;
+    hamburgerNavLinksList.appendChild(link);
   }
-});
 
-const closeHamburgerIcon = document.createElement("img");
-closeHamburgerIcon.src = "src/images/icons/svg/cross.svg";
-closeHamburgerIcon.alt = "Close menu";
-closeHamburgerIcon.classList.add("hamburger_menu__cross");
+  const hamburgerCollectionLinks = document.createElement("div");
+  hamburgerCollectionLinks.classList.add("hamburger_links__wrapper");
 
-hamburgerModal.appendChild(closeHamburgerIcon);
+  const hamburgerCollectionLinksList = [
+    "Fusion",
+    "Hike",
+    "Urban Outdoor",
+    "Everyday Originals",
+  ];
+  for (const text of hamburgerCollectionLinksList) {
+    const image = document.createElement("img");
+    image.src = `src/images/photos/png/${text
+      .toLowerCase()
+      .replace(/\s/g, "-")}.jpeg`;
 
-closeHamburgerIcon.addEventListener("click", () => {
-  hamburgerOverlay.style.display = "none";
-  hamburgerModal.classList.remove("hamburger_menu__open");
-  document.body.classList.remove("body_hamburger__open");
-});
+    const container = document.createElement("div");
+    container.classList.add("hamburger_links__container");
 
+    const link = document.createElement("a");
+    link.href = `#${text.toLowerCase().replace(/\s/g, "-")}`;
+    link.textContent = text;
+
+    container.appendChild(image);
+    container.appendChild(link);
+
+    hamburgerCollectionLinks.appendChild(container);
+  }
+
+  hamburgerNavIcons.appendChild(searchSvg);
+  hamburgerNavIcons.appendChild(cartSvg);
+  hamburgerNavIcons.appendChild(closeHamburgerIcon);
+
+  hamburgerModal.appendChild(hamburgerOpenNav);
+  hamburgerModal.appendChild(hamburgerNavLinksList);
+  hamburgerModal.appendChild(hamburgerCollectionLinks);
+
+  hamburgerOpenNav.appendChild(hamburgerNavLogo);
+  hamburgerOpenNav.appendChild(hamburgerNavIcons);
+
+  hamburgerNavLogo.appendChild(hamburgerLogoImage);
+
+  closeHamburgerIcon.addEventListener("click", () => {
+    hamburgerOverlay.style.display = "none";
+    hamburgerModal.classList.remove("hamburger_menu__open");
+    document.body.classList.remove("body_hamburger__open");
+  });
+}
 document.addEventListener("DOMContentLoaded", createNavbar);
