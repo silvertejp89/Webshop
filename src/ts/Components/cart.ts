@@ -1,9 +1,22 @@
-//Ska carten sparas i localstorage? antagligen. 
+//Spara carten i localstorage
+//anpassa html-efter design
 
 import "../../scss/main.scss"
 import { CartProduct } from "../models/CartProduct";
 
 export let cart: CartProduct[] = []
+
+function saveCartToLocalStorage(): void {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function loadCartFromLocalStorage(): void {
+  const storedCart = localStorage.getItem("cart");
+  if (storedCart) {
+    cart = JSON.parse(storedCart);
+    createHTMLCart();
+  }
+}
 
 //mock-data-------------------------------------------------------------------------
 const mock: {id: number; name: string; thumbnail_image: string; image_back: string; image_side: string; 
@@ -72,11 +85,14 @@ export function createHTMLProducts(): void {
       const text = document.createElement("h3");
 
       const priceText = document.createElement("h4");
-    
+
+
+    //LÄGG TILL -knapp, skapar cart objekt och sparar i localstorage. 
       const submitBtn = document.createElement("button");
       submitBtn.innerHTML = "Lägg till";
       submitBtn.addEventListener("click", () => {
         createCartProduct(i);
+        saveCartToLocalStorage();
       });
   
       card.appendChild(text);
@@ -112,6 +128,7 @@ export function createHTMLCart() {
       decreaseBtn.innerHTML = "-"
       decreaseBtn.addEventListener("click", () => {
         decreaseAmount(i);
+        saveCartToLocalStorage();
       });
       card.appendChild(decreaseBtn);
 
@@ -120,6 +137,7 @@ export function createHTMLCart() {
       increaseBtn.innerHTML = "+"
       increaseBtn.addEventListener("click", () => {
         increaseAmount(i);
+        saveCartToLocalStorage();
       });
       card.appendChild(increaseBtn);
 
@@ -128,11 +146,12 @@ export function createHTMLCart() {
       card.appendChild(amountText);
       amountText.innerHTML = String(cart[i].amount) + " st, " + String((cart[i].priceSEK)*(cart[i].amount)) + "kr";
 
-      //ta bort-knapp
+      //ta bort-knapp (sparar till localstorage)
       const removeBtn = document.createElement("button");
       removeBtn.innerHTML = "Ta bort";
       removeBtn.addEventListener("click", () => {
         deleteCartProduct(i);
+        saveCartToLocalStorage();
       });
       card.appendChild(removeBtn);
       //Lägg card i container
