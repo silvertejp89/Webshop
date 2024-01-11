@@ -106,7 +106,7 @@ export const createFooterHtml = () => {
 
 // Add the footer to the dom
 document.addEventListener("DOMContentLoaded", () => {
-  const body = document.body;
+  const footerContainer = document.getElementById("footer_wrapper");
   const footer = createFooterHtml();
-  body.appendChild(footer);
+  footerContainer?.appendChild(footer);
 });
