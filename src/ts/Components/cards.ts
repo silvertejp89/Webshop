@@ -5,6 +5,9 @@ import "../../scss/main.scss";
 function createProductCard(product: any): HTMLElement {
   const cardContainer = document.createElement("div");
   cardContainer.className = "product_card";
+  cardContainer.addEventListener("click", () => {
+    location.href = "index.html?id=" + product.id;
+  });
 
   const imageContainer = document.createElement("div");
   imageContainer.className = "product_image__container";
@@ -72,7 +75,7 @@ async function fetchDataAndCreateCards() {
     for (let i = 0; i < Math.min(4, data.length); i++) {
       const productCard = createProductCard(data[i]);
       const root = document.getElementById("root");
-      root.appendChild(productCard);
+      root?.appendChild(productCard);
     }
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -85,7 +88,7 @@ fetchDataAndCreateCards();
 
 // fetch("src/data/products.json")
 //   .then((response) => response.json())
-//   .then((data) => {
+//   .then((data: Product[]) => {
 //     // Loop through the products and create product cards
 //     for (const product of data) {
 //       const productCard = createProductCard(product);
