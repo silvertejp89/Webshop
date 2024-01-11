@@ -16,7 +16,7 @@ export class CartProduct {
       this.thumbnail_image = thumbnail_image;
       this.color = color;
       this.priceSEK = priceSEK;
-      this.size = size; //glöm inte att lägga till o rad 13 också.
+      this.size = size;
       this.amount = amount;
     }
   }

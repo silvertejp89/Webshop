@@ -1,5 +1,3 @@
-//anpassa html-efter design
-
 import "../../scss/main.scss"
 import { CartProduct } from "../models/CartProduct";
 
@@ -90,7 +88,7 @@ export function createHTMLProducts(): void {
       const submitBtn = document.createElement("button");
       submitBtn.innerHTML = "Lägg till";
       submitBtn.addEventListener("click", () => {
-        createCartProduct(i);
+        createCartProductQuickShop(i);
         saveCartToLocalStorage();
       });
   
@@ -99,7 +97,6 @@ export function createHTMLProducts(): void {
       card.appendChild(submitBtn);
       mockContainer?.appendChild(card);
       priceText.innerHTML = String(mock[i].priceSEK) + " kr";
-
     }
   };
 
@@ -181,7 +178,7 @@ export function createHTMLCart() {
   };
 
   //LÄGG TILL-knapp-funktion------------------------------
-  export function createCartProduct(i: number) {
+  export function createCartProductQuickShop(i: number) {
     const id = mock[i].id;
     const name = mock[i].name;
     const thumbnail_image = mock[i].thumbnail_image;
@@ -204,6 +201,31 @@ export function createHTMLCart() {
     } 
     createHTMLCart();
   };
+
+    //LÄGG TILL 22222------------------------------
+    // export function createCartProductPDP() {
+    //   const cartId = product.id;
+    //   const cartName = product.name;
+    //   const cartThumbnail_image = product.thumbnail_image;
+    //   const cartPrice = product.priceSEK;
+    //   const cartColor = product.color;
+    //   const cartSize = product.size;
+  
+    //   let foundProductInCart = false;
+    //   cart.forEach((product, i) => {
+    //     if (product.id === cartId) {
+    //       cart[i].amount++;
+    //       foundProductInCart = true;
+    //     }
+    //   });
+  
+    //   if (!foundProductInCart) {
+    //     const newCartProduct = new CartProduct(cartId, cartName, cartThumbnail_image, cartColor, cartPrice, cartSize);
+    //     cart.push(newCartProduct);
+    //     console.log("Din varukorg: ", cart.length, cart);
+    //   } 
+    //   createHTMLCart();
+    // };
 
   //Delete product------------------------------------
   export function deleteCartProduct(i: number) {
