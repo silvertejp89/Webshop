@@ -1,0 +1,54 @@
+@import "../base/typography.scss";
+@import "../base/colors.scss";
+
+.button_lg {
+    font-family: $barlow;
+    color: $black;
+    background-color: $white;
+    border: 1px solid $black;
+    margin-top: 1.25rem;
+    padding: 16px 0px 16px 0px;
+    transition: color 0.3s, background-color 0.3s, border 0.3s;
+
+    cursor:pointer;
+}
+
+.button_lg:hover,
+.button_lg:focus {
+    color: $white;
+    background-color: $black;
+    border: 1px solid $white;
+}
+
+.button_lg:hover:active,
+.button_lg:focus:active {
+    color: $black;
+    background-color: $white;
+    border: 1px solid $black;
+}
+
+.button_lg__secondary {
+    font-family: $barlow;
+    color: $white;
+    background-color: $black;
+    border: 1px solid $white;
+    margin-top: 1.25rem;
+    padding: 16px 0px 16px 0px;
+    transition: color 0.3s, background-color 0.3s, border 0.3s;
+
+    cursor:pointer;
+}
+
+.button_lg__secondary:hover,
+.button_lg__secondary:focus {
+    color: $black;
+    background-color: $white;
+    border: 1px solid $black;
+}
+
+.button_lg__secondary:hover:active,
+.button_lg__secondary:focus:active {
+    color: $white;
+    background-color: $black;
+    border: 1px solid $black;
+}
