@@ -9,6 +9,10 @@
   <body>
     <div>Hello this is div</div>
     <div id="modal_container"></div>
-    <script type="module" src="/src/ts/Components/cartTest.ts"></script>
+    <script>
+      window.addEventListener("load", () => {
+        location.href = "cart.html?id=8";
+      });
+    </script>
   </body>
 </html>

@@ -1,7 +1,3 @@
-window.addEventListener("load", () => {
-  location.href = "cart.html?id=" + product.id;
-});
-
 interface IProduct {
   id: number;
   name: string;
@@ -42,6 +38,10 @@ function getProductDetails(productId: string): Promise<IProduct | undefined> {
 function createProductDetailsHTML(product: IProduct) {
   return `<img src=${product.thumbnail_image}>`;
 }
+
+const productDetailsContainer = document.getElementById(
+  "product_details__container"
+);
 
 if (productDetailsContainer && productId !== null) {
   getProductDetails(productId).then((productDetails) => {
