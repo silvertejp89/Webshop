@@ -1,0 +1,52 @@
+@import "../base/typography.scss";
+@import "../base/colors.scss";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+#product_details__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+
+
+    
+}
+
+.product-hero {
+    grid-area: 1 / 1 / 2 / 3;
+
+    display:flex;
+}
+
+.product-images {
+    display: flex;
+    flex: 1 1 0%;
+    grid-area: 2 / 1 / 3 / 3
+}
+
+.product-thumbnail img {
+    width: 50vw; 
+    height: 100vh;    
+    display: block;  
+    margin: 0;       
+    padding: 0;      
+
+    object-fit: cover;
+}
+
+.product-images img {
+    width: 50vw; 
+    height: 100vh;    
+    display: block;  
+    margin: 0;       
+    padding: 0;      
+
+    object-fit: cover;
+}
