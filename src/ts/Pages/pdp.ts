@@ -34,18 +34,39 @@ function getProductDetails(productId: string): Promise<IProduct | undefined> {
 function createProductDetailsHTML(product: IProduct) {
   return `
     <div class="product-hero">
+      
       <div class="product-thumbnail">
         <img src="${product.thumbnail_image}" alt="${product.name} Thumbnail">
       </div>
-      <div class="product-info">
-        <h2>${product.name}</h2>
-        <p>${product.description}</p>
-        <p>Color:${product.color}</p>
-        <p>Size: ${product.size}</p>
-        <p>Price: ${product.priceSEK} SEK</p>
-        <p>Measurement: ${product.measurement}</p>
-        <button>Add to cart</button>
-      </div>
+
+      <div class="product_info">
+        <p class="pdp_product__category">EVERYDAY ORIGINALS</p>
+        <p class="pdp_product__name">${product.name}</p>
+            
+            <div class="product_info__price">
+                <span>${product.priceSEK}.00 SEK</span>
+                <img src="src/images/icons/svg/star.svg">
+            </div>
+
+        <p class="pdp_product__desc">${product.description}</p>
+
+        <div class="product_details__container">
+            <span>Measurement: ${product.measurement}</span>
+            <p>DELIVERY</p>
+            <p>DETAILS</p>  
+        </div>
+
+        <div class="pdp_size__wrapper">
+            <span>Size</span>
+            <span id="pdp_onesize">${product.size}</span>
+        </div>
+
+        <button class="button_lg">Add to cart</button>
+
+    </div>
+
+   </div> 
+        
     </div>
       <div class="product-images">
         <img src="${product.image_back}" alt="${product.name} Back View">
