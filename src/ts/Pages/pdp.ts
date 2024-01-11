@@ -1,5 +1,14 @@
-import { IProduct } from "../models/IProduct";
+import { IProduct } from "../Models/IProduct.ts";
 import "../../scss/main.scss";
+
+import { createNavbar } from "../Components/nav.ts";
+import { navbarHideShowScroll } from "../Components/nav.ts";
+
+import { createFooterHtml } from "../Components/footer.ts";
+
+createNavbar();
+navbarHideShowScroll();
+createFooterHtml();
 
 // Get the id from the URL which was added from redirect of a product card
 

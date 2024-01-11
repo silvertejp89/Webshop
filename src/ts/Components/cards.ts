@@ -1,7 +1,6 @@
 import "../../scss/main.scss";
-import { IProduct } from "../models/IProduct";
 
-import { IProduct } from "../Models/IProduct";
+import { IProduct } from "../Models/IProduct.ts";
 
 // Create HTMLElements in DOM for Product card
 

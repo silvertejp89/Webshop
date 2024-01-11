@@ -17,7 +17,7 @@ export function createProductCard(product: IProduct): HTMLElement {
   const cardContainer = document.createElement("div");
   cardContainer.className = "product_card";
   cardContainer.addEventListener("click", () => {
-    location.href = "index.html?id=" + product.id;
+    location.href = "pdp.html?id=" + product.id;
   });
 
   const imageContainer = document.createElement("div");
