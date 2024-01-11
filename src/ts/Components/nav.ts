@@ -2,7 +2,7 @@ import "../../scss/main.scss";
 
 // Function to generate navbar with content in DOM
 
-function createNavbar(): void {
+export function createNavbar(): void {
   const navbarWrapper = document.getElementById("navbar_wrapper");
   if (!navbarWrapper) {
     console.error("Navbar container not found");
@@ -78,7 +78,7 @@ function createNavbar(): void {
   createHamburgerOpen();
 }
 
-function createHamburgerOpen(): void {
+export function createHamburgerOpen(): void {
   // Create modal that opens when hamburger is clicked
 
   const hamburgerOverlay = document.createElement("div");
@@ -205,33 +205,32 @@ function createHamburgerOpen(): void {
 }
 
 // Nav bar dissapears on scroll
+export function navbarHideShowScroll() {
+  const scrollUp = "scroll-up";
+  const scrollDown = "scroll-down";
+  let lastScroll = 0;
 
-const scrollUp = "scroll-up";
-const scrollDown = "scroll-down";
-let lastScroll = 0;
-
-window.addEventListener("scroll", () => {
-  const currentScroll = window.pageYOffset;
-  if (currentScroll <= 0) {
-    document.body.classList.remove(scrollUp);
-    return;
-  }
-  if (
-    currentScroll > lastScroll &&
-    !document.body.classList.contains(scrollDown)
-  ) {
-    //Scrolling down
-    document.body.classList.remove(scrollUp);
-    document.body.classList.add(scrollDown);
-  } else if (
-    currentScroll < lastScroll &&
-    document.body.classList.contains(scrollDown)
-  ) {
-    //Scrolling down
-    document.body.classList.remove(scrollDown);
-    document.body.classList.add(scrollUp);
-  }
-  lastScroll = currentScroll;
-});
-
-document.addEventListener("DOMContentLoaded", createNavbar);
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll <= 0) {
+      document.body.classList.remove(scrollUp);
+      return;
+    }
+    if (
+      currentScroll > lastScroll &&
+      !document.body.classList.contains(scrollDown)
+    ) {
+      //Scrolling down
+      document.body.classList.remove(scrollUp);
+      document.body.classList.add(scrollDown);
+    } else if (
+      currentScroll < lastScroll &&
+      document.body.classList.contains(scrollDown)
+    ) {
+      //Scrolling down
+      document.body.classList.remove(scrollDown);
+      document.body.classList.add(scrollUp);
+    }
+    lastScroll = currentScroll;
+  });
+}
