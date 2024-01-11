@@ -5,77 +5,65 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sandqvist</title>
-    <link rel="stylesheet" href="home.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <div class="container">
-      <div class="grid-item item-1">
-        <img
-          src="src/images/photos/png/Sandqvist_hero_3.png"
-          alt="Två personer som går upp för ett berg och bär Sandqvists ryggsäckar"
-        />
+    <div id="nav_wrapper"></div>
+
+    <div class="home_content__container">
+      <div class="home_hero__container">
+        <img src="src/images/photos/png/Sandqvist_hero_3.png" alt="smiley" />
       </div>
-      <div class="grid-item item-2 desktop-layout">
-        <img
-          src="src/images/photos/png/Dante_product_image.png"
-          alt="Ryggsäck, design Dante i färg svart"
-        />
-      </div>
-      <div class="grid-item item-3 desktop-layout">
-        <img
-          src="src/images/photos/png/Jack_product_image.png"
-          alt="Ryggsäck, design Jack i färgen gul och svart"
-        />
-      </div>
-      <div class="grid-item item-4 desktop-layout">
-        <img
-          src="src/images/photos/png/Kurt_product_image.png"
-          alt="Ryggsäck, design Kurt i färgen lila"
-        />
-      </div>
-      <div class="grid-item item-5 desktop-layout">
-        <img
-          src="src/images/photos/png/Tony_product_image.png"
-          alt="Ryggsäck, design Tony i färgen grön"
-        />
-      </div>
-      <div class="grid-item item-6">
-        <img src="src/images/photos/png/sandqvist_blog_2.png" alt="" />
-      </div>
-      <div class="grid-item item-7 text-container">
-        <p class="first-p">
-          A mountain breakfast above the tree line, with Sandqvist founders
-          Sebastian Westin and Daniel Sandqvist.
-          <br /><br />
-          The Sonfjället national park has always been a great source of
-          inspiration for us at Sandqvist. Having a cabin nearby has made it
-          possible going on hikes; on skis during the winter and by foot during
-          the summer, spring and fall.
-          <br /><br />
-          At Sandqvist, the Nordic nature means everything. We pick up all our
-          ideas, inspiration, lust and ambition from the cold mountains, deep
-          forests and roaming waters.
-        </p>
-      </div>
-      <div class="grid-item item-8">
-        <img src="src/images/photos/png/Sandqvist_blog.png" alt="" />
-      </div>
-      <div class="grid-item item-9 text-container">
-        <p class="second-p">
-          Sometimes we camp in a tent overnight, but this time, during late
-          fall, we decided to sleep in the cabin and get up really early so we
-          could meet the rising sun while having breakfast on the mountain. When
-          we began walking there wasn't much snow at all, but as we ascended
-          more and more covered the ground, until we were walking on a thick
-          windswept layer of snow. <br /><br />
-          We kept on walking for an hour or two, and when the first rays of
-          morning sun appeared above the peaks, we sat down in a sheltered
-          ravine and ate our breakfast with a scenic view, high above the tree
-          line.
-        </p>
+
+      <div id="home_product__cards"></div>
+
+      <div class="home_blog__container">
+        <div class="home_blog__post">
+          <div class="blog_image__container">
+            <img src="src/images/photos/png/sandqvist_blog_2.png" alt="" />
+          </div>
+          <div class="blog_text__container">
+            <p>
+              A mountain breakfast above the tree line, with Sandqvist founders
+              Sebastian Westin and Daniel Sandqvist.
+            </p>
+            <p>
+              The Sonfjället national park has always been a great source of
+              inspiration for us at Sandqvist. Having a cabin nearby has made it
+              possible going on hikes; on skis during the winter and by foot
+              during the summer, spring and fall.
+            </p>
+            <p>
+              At Sandqvist, the Nordic nature means everything. We pick up all
+              our ideas, inspiration, lust and ambition from the cold mountains,
+              deep forests and roaming waters.
+            </p>
+          </div>
+        </div>
+        <div class="home_blog__post">
+          <div class="blog_image__container">
+            <img src="src/images/photos/png/Sandqvist_blog.png" alt="" />
+          </div>
+          <div class="blog_text__container">
+            <p>
+              Sometimes we camp in a tent overnight, but this time, during late
+              fall, we decided to sleep in the cabin and get up really early so
+              we could meet the rising sun while having breakfast on the
+              mountain. When we began walking there wasnt much snow at all, but
+              as we ascended more and more covered the ground, until we were
+              walking on a thick windswept layer of snow.
+            </p>
+            <p>
+              We kept on walking for an hour or two, and when the first rays of
+              morning sun appeared above the peaks, we sat down in a sheltered
+              ravine and ate our breakfast with a scenic view, high above the
+              tree line.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+
+    <div id="root"></div>
     <script type="module" src="/src/ts/pages/home.ts"></script>
   </body>
 </html>
