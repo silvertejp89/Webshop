@@ -1,8 +1,10 @@
 import "../../scss/main.scss";
 
+import { IProduct } from "../Models/IProduct";
+
 // Create HTMLElements in DOM for Product card
 
-function createProductCard(product: any): HTMLElement {
+export function createProductCard(product: IProduct): HTMLElement {
   const cardContainer = document.createElement("div");
   cardContainer.className = "product_card";
   cardContainer.addEventListener("click", () => {
@@ -57,7 +59,7 @@ function createProductCard(product: any): HTMLElement {
 
 // Function to fetch 4 random products from products.json async
 
-async function fetchDataAndCreateCards() {
+export async function fetchDataAndCreateCards() {
   try {
     const response = await fetch("src/data/products.json");
     if (!response.ok) {
