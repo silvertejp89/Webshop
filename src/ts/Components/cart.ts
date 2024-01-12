@@ -1,7 +1,7 @@
 //anpassa html-efter design
 
 import "../../scss/main.scss";
-import { CartProduct } from "../models/CartProduct";
+import { CartProduct } from "./../Models/CartProduct";
 
 export let cart: CartProduct[] = [];
 
@@ -279,4 +279,5 @@ export function calculateTotalPrice() {
 //Hämtar cart från localstorage när sidan laddas.
 window.addEventListener("load", () => {
   loadCartFromLocalStorage();
+  createHTMLCart();
 });
