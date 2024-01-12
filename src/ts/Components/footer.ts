@@ -40,7 +40,7 @@ export const createFooterHtml = () => {
   for (let i = 0; i < linkTexts.length; i++) {
     const li = document.createElement("li");
     const link = document.createElement("a");
-    link.href = "#";
+    link.href = "plp.html";
     link.textContent = linkTexts[i];
     link.setAttribute("id", linkTexts[i].toLowerCase().replace(/\s/g, "-"));
     li.appendChild(link);

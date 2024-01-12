@@ -15,11 +15,15 @@ export function createNavbar(): void {
   const leftSection = document.createElement("div");
   leftSection.classList.add("navbar_left__container");
 
-  const linkTexts = ["Contact us", "Collections", "Sustainability"];
-  for (const text of linkTexts) {
+  const linkInfo = [
+    { text: "Contact us", url: "home.html" },
+    { text: "Collections", url: "plp.html" },
+    { text: "Sustainability", url: "home.html" },
+  ];
+  for (const info of linkInfo) {
     const link = document.createElement("a");
-    link.href = `#${text.toLowerCase().replace(/\s/g, "-")}`;
-    link.textContent = text;
+    link.href = info.url;
+    link.textContent = info.text;
     leftSection.appendChild(link);
   }
 
@@ -29,6 +33,10 @@ export function createNavbar(): void {
   const logoImage = document.createElement("img");
   logoImage.src = "src/images/photos/png/sandqvist_logo.png";
   logoImage.alt = "Sandqvist Logo";
+
+  logoImage.addEventListener("click", function () {
+    window.location.href = "/home.html";
+  });
 
   const rightSection = document.createElement("div");
   rightSection.classList.add("navbar_right__container");
@@ -70,10 +78,6 @@ export function createNavbar(): void {
   navbarWrapper.appendChild(navbar);
 
   // On click event listeners
-
-  logoSection.addEventListener("click", () => {
-    window.location.href = "/";
-  });
 
   createHamburgerOpen();
 }
@@ -165,6 +169,7 @@ export function createHamburgerOpen(): void {
     "Urban Outdoor",
     "Everyday Originals",
   ];
+
   for (const text of hamburgerCollectionLinksList) {
     const image = document.createElement("img");
     image.src = `src/images/photos/png/${text
@@ -175,7 +180,7 @@ export function createHamburgerOpen(): void {
     container.classList.add("hamburger_links__container");
 
     const link = document.createElement("a");
-    link.href = `#${text.toLowerCase().replace(/\s/g, "-")}`;
+    link.href = "plp.html"; // Set the href to plp.html
     link.textContent = text;
 
     container.appendChild(image);
@@ -183,7 +188,6 @@ export function createHamburgerOpen(): void {
 
     hamburgerCollectionLinks.appendChild(container);
   }
-
   hamburgerNavIcons.appendChild(searchSvg);
   hamburgerNavIcons.appendChild(cartSvg);
   hamburgerNavIcons.appendChild(closeHamburgerIcon);

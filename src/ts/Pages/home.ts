@@ -6,10 +6,13 @@ import { createNavbar } from "../Components/nav.ts";
 import { navbarHideShowScroll } from "../Components/nav.ts";
 
 import { IProduct } from "../Models/IProduct.ts";
+import { openCartModal } from "../Components/cartModal.ts";
 
 createFooterHtml();
 
 createNavbar();
+
+openCartModal();
 
 navbarHideShowScroll();
 

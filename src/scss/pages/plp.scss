@@ -7,14 +7,23 @@
   box-sizing: border-box;
 }
 
-.plp_hero {
-  display: flex;
-  flex-direction: column;
-  max-height: 60vh;
+.plp_hero img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  display: block;
 }
 
-.plp_hero img {
-  height: 40%;
-  width: 100vw;
-  object-fit: cover;
+.plp_category {
+  font-family: $inter;
+  font-size: $h2;
+  padding: 18px 0 18px 20px;
+}
+
+@media screen and (max-width: 880px) {
+  .plp_category {
+    font-family: $inter;
+    font-size: $h4;
+    padding: 18px 0 18px 16px;
+  }
 }

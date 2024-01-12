@@ -1,0 +1,29 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 9999;
+}
+
+.cart-modal {
+  width: 30vw;
+  height: 100vh;
+  position: fixed;
+  top: 50%;
+  right: -100%;
+  transform: translateY(-50%);
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  transition: right 0.3s ease-in-out;
+  z-index: 10000;
+  display: none;
+}
+
+.cart-modal.show {
+  right: 0;
+}
