@@ -10,8 +10,6 @@ createNavbar();
 navbarHideShowScroll();
 createFooterHtml();
 
-// Get the id from the URL which was added from redirect of a product card
-
 function getProductIdFromUrl() {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get("id");
@@ -70,7 +68,7 @@ function createProductDetailsHTML(product: IProduct) {
             <span id="pdp_onesize">${product.size}</span>
         </div>
 
-        <button class="button_lg">Add to cart</button>
+        <button class="button_lg" id="addButton">Add to cart</button>
 
     </div>
 
