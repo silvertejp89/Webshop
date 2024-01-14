@@ -102,7 +102,6 @@ if (productDetailsContainer && productId !== null) {
           productDetails,
           document.querySelector(".cart-container")!
         );
-        console.log("Klickediklick", cart);
         alert("YAY, you've added " + productDetails.name + " to your cart!");
       });
     } else {

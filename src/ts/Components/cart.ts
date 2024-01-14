@@ -130,10 +130,8 @@ export function createCartProduct(productToAdd: IProduct, container: Element) {
       size
     );
     cart.push(newCartProduct);
-    console.log("Din varukorg: ", cart.length, cart);
   }
 
-  console.log("Cart efter add", cart);
   saveCartToLocalStorage();
 
   createHTMLCart(container);
@@ -148,7 +146,6 @@ export function deleteCartProduct(i: number) {
 export function decreaseAmount(i: number) {
   if (cart[i].amount > 1) {
     cart[i].amount--;
-    console.log(cart);
   } else {
     deleteCartProduct(i);
   }
@@ -157,7 +154,6 @@ export function decreaseAmount(i: number) {
 //Increase amount-------------------------------------------
 export function increaseAmount(i: number) {
   cart[i].amount++;
-  console.log(cart);
 }
 
 //Total amount & total price---------------------------------
@@ -180,10 +176,6 @@ export function calculateTotalPrice() {
   totalPrice = 0;
 
   for (let i = 0; i < cart.length; i++) {
-    console.log("cart amount: ", cart[i].amount);
-    console.log("cart price: ", cart[i].priceSEK);
-
     totalPrice += cart[i].amount * cart[i].priceSEK;
-    console.log("total price:", totalPrice);
   }
 }

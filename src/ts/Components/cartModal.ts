@@ -34,7 +34,5 @@ export function openCartModal(): void {
 
   createHTMLCart(container);
 
-  console.log(container);
-
   cartModal.appendChild(container);
 }
