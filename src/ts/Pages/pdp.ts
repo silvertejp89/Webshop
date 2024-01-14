@@ -5,6 +5,8 @@ import { createNavbar } from "../Components/nav.ts";
 import { navbarHideShowScroll } from "../Components/nav.ts";
 
 import { createFooterHtml } from "../Components/footer.ts";
+import { cart, createCartProduct } from "../Components/cart.ts";
+import { openCartModal } from "../Components/cartModal.ts";
 
 createNavbar();
 navbarHideShowScroll();
@@ -93,6 +95,16 @@ if (productDetailsContainer && productId !== null) {
     if (productDetails) {
       productDetailsContainer.innerHTML =
         createProductDetailsHTML(productDetails);
+      const addToCartButton = document.getElementById("addButton");
+
+      addToCartButton?.addEventListener("click", () => {
+        createCartProduct(
+          productDetails,
+          document.querySelector(".cart-container")!
+        );
+        console.log("Klickediklick", cart);
+        alert("YAY, you've added " + productDetails.name + " to your cart!");
+      });
     } else {
       console.error("Product details not available.");
     }
@@ -100,3 +112,5 @@ if (productDetailsContainer && productId !== null) {
 } else {
   console.error("Product ID not found in the URL");
 }
+
+openCartModal();

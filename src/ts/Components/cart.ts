@@ -1,5 +1,3 @@
-//anpassa html-efter design
-
 import "../../scss/main.scss";
 import { CartProduct } from "./../Models/CartProduct";
 
@@ -9,128 +7,38 @@ function saveCartToLocalStorage(): void {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-function loadCartFromLocalStorage(): void {
+export function loadCartFromLocalStorage(): void {
   const storedCart = localStorage.getItem("cart");
   if (storedCart) {
     cart = JSON.parse(storedCart);
-    createHTMLCart();
   }
 }
-
-//mock-data-------------------------------------------------------------------------
-const mock: {
-  id: number;
-  name: string;
-  thumbnail_image: string;
-  image_back: string;
-  image_side: string;
-  color: string;
-  priceSEK: number;
-  description: string;
-  measurement: string;
-  size: string;
-}[] = [
-  {
-    id: 1,
-    name: "Olof",
-    thumbnail_image: "src/images/photos/png/Olof_product_image.png",
-    image_back: "src/images/photos/png/Olof_back.png",
-    image_side: "src/images/photos/png/Olof_side.png",
-    color: "Black",
-    priceSEK: 895.0,
-    description:
-      "Funktionell och vattenavvisande cross-body väska tillverkad i 100% återvunnen polyester. Väskan är designad med två innerfickor, en avtagbar och justerbar axelrem och ett handtag. En perfekt extraväska för de dagar du bara behöver packa det viktigaste.",
-    measurement: "24 x 16 x 9 cm",
-    size: "One size",
-  },
-  {
-    id: 2,
-    name: "Dante Vegan",
-    thumbnail_image: "src/images/photos/png/Dante_product_image.png",
-    image_back: "src/images/photos/png/Dante_back_picture.png",
-    image_side: "src/images/photos/png/Dante_side_product.png",
-    color: "Black",
-    priceSEK: 1395.0,
-    description:
-      "Dante Vegan är en rymlig och vattenavvisande rolltop-ryggsäck skapad för att kunna användas varje dag, oavsett om du pendlar till jobbet eller är ute i naturen. Dante Vegan en variant av vår bästsäljande modell Dante, men gjord utan läderdetaljer och i 100% återvunna och veganska material. Väskan stängs med ett spänne i metall och rymmer mellan 16–23 L. Ryggsäcken har två innerfack, varav ett passar de flesta datorer upp till 16 tum. Vadderade axelremmar för skön bärkomfort och ytterfack med dragkedja, samt handtag på sidan. Det här är en hållbar ryggsäck med hög kvalitet och tidlös design, som du kan använda och älska länge. Dante Vegan är en del av vår Ground-kollektion. Här hittar du fler väskor i samma serie.",
-    measurement: "26 x 43/56 x 16 cm",
-    size: "One size",
-  },
-  {
-    id: 3,
-    name: "Tony Vegan",
-    thumbnail_image: "src/images/photos/png/Tony_product_image.png",
-    image_back: "src/images/photos/png/Tony_back.png",
-    image_side: "src/images/photos/png/Tony_side.png",
-    color: "Green",
-    priceSEK: 1295.0,
-    description:
-      "Ryggsäck i 100 % återvunnen polyester med vattentät TPU-beläggning. Väskan har ett 15' laptopfack, en yttrerficka med blixtlås och kan bära upp till 13 L. Funktionaliteten och den minimalistiska designen gör denna ryggsäck till en idealisk följeslagare, vart du än går.",
-    measurement: "27 x 42 x 12 cm",
-    size: "One size",
-  },
-  {
-    id: 4,
-    name: "Kurt",
-    thumbnail_image: "src/images/photos/png/Kurt_product_image.png",
-    image_back: "src/images/photos/png/Kurt_back.png",
-    image_side: "src/images/photos/png/Kurt_side.png",
-    color: "Pink",
-    priceSEK: 1295.0,
-    description:
-      "Kurt är en minimalistisk, mångsidig och slitstark rolltop-ryggsäck med fina läderdetaljer. Den rymmer upp till 17 L och är gjord av vattenavvisande och 100% återvunnen polyester. Kurt har justerbara axelremmar, ett dolt ytterfack med dragkedja, samt ett laptopfack som passar de flesta datorer upp till 16 tum. Denna ryggsäck är perfekt att använda varje dag, oavsett om du pendlar till jobbet eller är ute i naturen. Kurt är ett av de senaste tillskotten i vår Ground-kollektion. Här hittar du fler väskor i samma serie.",
-    measurement: "27 x 38 x 15 cm",
-    size: "One size",
-  },
-];
-//----------------------------------------------------
-
-const mockContainer = document.querySelector(".mock-container");
-const cartContainer = document.querySelector(".cart-container");
-
-export function createHTMLProducts(): void {
-  if (!mockContainer) return;
-  mockContainer.innerHTML = "";
-  for (let i = 0; i < mock.length; i++) {
-    const card = document.createElement("article");
-    card.classList.add("card");
-    const text = document.createElement("h3");
-
-    const priceText = document.createElement("h4");
-
-    //LÄGG TILL -knapp, skapar cart objekt och sparar i localstorage.
-    const submitBtn = document.createElement("button");
-    submitBtn.innerHTML = "Lägg till";
-    submitBtn.addEventListener("click", () => {
-      createCartProduct(i);
-      saveCartToLocalStorage();
-    });
-
-    card.appendChild(text);
-    card.appendChild(priceText);
-    card.appendChild(submitBtn);
-    mockContainer?.appendChild(card);
-    text.innerHTML = mock[i].name;
-    priceText.innerHTML = String(mock[i].priceSEK) + " kr";
-  }
-}
-
-createHTMLProducts();
 
 //CART HTML------------------------------------------------------------------------
-export function createHTMLCart() {
-  if (!cartContainer) return;
+export function createHTMLCart(cartContainer: Element) {
+  loadCartFromLocalStorage();
   cartContainer.innerHTML = "";
+
+  calculateAmount();
+  calculateTotalPrice();
+
+  const cartTitle = document.createElement("h2");
+  cartTitle.textContent = "CART (" + totalAmount + ")";
+
+  cartContainer.appendChild(cartTitle);
 
   for (let i = 0; i < cart.length; i++) {
     const card = document.createElement("article");
     card.classList.add("card2");
 
     //Thumnail-bild
+    const thumnailContainer = document.createElement("div");
+    card.appendChild(thumnailContainer);
+    thumnailContainer.classList.add("thumnail-image-container");
+
     const thumnailImage = document.createElement("img");
-    card.appendChild(thumnailImage);
+    thumnailContainer.appendChild(thumnailImage);
     thumnailImage.src = cart[i].thumbnail_image;
-    thumnailImage.classList.add("thumnail-image");
 
     //Produktnamn
     const productName = document.createElement("h2");
@@ -148,6 +56,7 @@ export function createHTMLCart() {
     decreaseBtn.addEventListener("click", () => {
       decreaseAmount(i);
       saveCartToLocalStorage();
+      createHTMLCart(cartContainer);
     });
     card.appendChild(decreaseBtn);
 
@@ -157,6 +66,7 @@ export function createHTMLCart() {
     increaseBtn.addEventListener("click", () => {
       increaseAmount(i);
       saveCartToLocalStorage();
+      createHTMLCart(cartContainer);
     });
     card.appendChild(increaseBtn);
 
@@ -167,7 +77,7 @@ export function createHTMLCart() {
       String(cart[i].amount) +
       " st, " +
       String(cart[i].priceSEK * cart[i].amount) +
-      "kr";
+      " SEK";
 
     //ta bort-knapp (sparar till localstorage)
     const removeBtn = document.createElement("button");
@@ -175,32 +85,32 @@ export function createHTMLCart() {
     removeBtn.addEventListener("click", () => {
       deleteCartProduct(i);
       saveCartToLocalStorage();
+      createHTMLCart(cartContainer);
     });
-    card.appendChild(removeBtn);
-    //Lägg card i container
     cartContainer?.appendChild(card);
   }
-  createHTMLProducts();
 
-  calculateAmount();
+  const subtotal = document.createElement("span");
+  subtotal.textContent = "Subtotal: " + totalPrice + " SEK";
+  cartContainer.appendChild(subtotal);
 
-  calculateTotalPrice();
-
-  // dessa har hittats med queryselector längst ner.
-  if (!amountCounter) return;
-  amountCounter.textContent = `${totalAmount}` + " produkter, ";
-  if (!priceCounter) return;
-  priceCounter.textContent = `${totalPrice}` + " kr";
+  const toCheckoutButton = document.createElement("button");
+  toCheckoutButton.classList.add("button_lg__secondary");
+  toCheckoutButton.innerText = "Go to Checkout";
+  toCheckoutButton.addEventListener("click", function () {
+    window.location.href = "/temporaryCheckout.html";
+  });
+  cartContainer.appendChild(toCheckoutButton);
 }
 
 //LÄGG TILL-knapp-funktion------------------------------
-export function createCartProduct(i: number) {
-  const id = mock[i].id;
-  const name = mock[i].name;
-  const thumbnail_image = mock[i].thumbnail_image;
-  const price = mock[i].priceSEK;
-  const color = mock[i].color;
-  const size = mock[i].size;
+export function createCartProduct(productToAdd: IProduct, container: Element) {
+  const id = productToAdd.id;
+  const name = productToAdd.name;
+  const thumbnail_image = productToAdd.thumbnail_image;
+  const price = productToAdd.priceSEK;
+  const color = productToAdd.color;
+  const size = productToAdd.size;
 
   let foundProductInCart = false;
   cart.forEach((product, i) => {
@@ -222,13 +132,16 @@ export function createCartProduct(i: number) {
     cart.push(newCartProduct);
     console.log("Din varukorg: ", cart.length, cart);
   }
-  createHTMLCart();
+
+  console.log("Cart efter add", cart);
+  saveCartToLocalStorage();
+
+  createHTMLCart(container);
 }
 
 //Delete product------------------------------------
 export function deleteCartProduct(i: number) {
   cart.splice(i, 1);
-  createHTMLCart();
 }
 
 //Decrease amount-------------------------------------
@@ -236,7 +149,6 @@ export function decreaseAmount(i: number) {
   if (cart[i].amount > 1) {
     cart[i].amount--;
     console.log(cart);
-    createHTMLCart();
   } else {
     deleteCartProduct(i);
   }
@@ -246,13 +158,13 @@ export function decreaseAmount(i: number) {
 export function increaseAmount(i: number) {
   cart[i].amount++;
   console.log(cart);
-  createHTMLCart();
 }
 
 //Total amount & total price---------------------------------
-const amountCounter = document.querySelector(".amountCounter");
-const priceCounter = document.querySelector(".priceCounter");
-console.log(amountCounter);
+const amountCounter = document.createElement("div");
+amountCounter.className = "amountCounter";
+const priceCounter = document.createElement("div");
+priceCounter.className = ".priceCounter";
 
 let totalAmount = 0;
 let totalPrice = 0;
@@ -275,9 +187,3 @@ export function calculateTotalPrice() {
     console.log("total price:", totalPrice);
   }
 }
-
-//Hämtar cart från localstorage när sidan laddas.
-window.addEventListener("load", () => {
-  loadCartFromLocalStorage();
-  createHTMLCart();
-});

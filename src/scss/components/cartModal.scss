@@ -12,7 +12,7 @@
 .cart-modal {
   width: 30vw;
   height: 100vh;
-  position: fixed;
+  position: absolute;
   top: 50%;
   right: -100%;
   transform: translateY(-50%);
@@ -26,4 +26,15 @@
 
 .cart-modal.show {
   right: 0;
+  // height: auto;
 }
+
+//Temporary styling
+.thumnail-image-container{
+  width: 50%;
+  img {
+      max-width: 100%;
+  }
+};
+
+

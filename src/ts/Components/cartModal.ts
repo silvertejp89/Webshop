@@ -1,4 +1,5 @@
 import "../../scss/main.scss";
+import { createHTMLCart } from "./cart";
 
 export function openCartModal(): void {
   const cartSvg = document.querySelector(
@@ -27,4 +28,13 @@ export function openCartModal(): void {
 
     cartModal.classList.remove("show");
   });
+
+  const container = document.createElement("div");
+  container.className = "cart-container";
+
+  createHTMLCart(container);
+
+  console.log(container);
+
+  cartModal.appendChild(container);
 }
