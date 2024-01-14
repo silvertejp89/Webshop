@@ -1,0 +1,230 @@
+@import "../base/typography.scss";
+@import "../base/colors.scss";
+/*-----------------------------------MOBILE MODE-----------------------------------*/
+#postnord-info,
+#hemleverans-info {
+  display: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+h3 {
+  font-weight: $light;
+  margin-left: 10px;
+}
+.klarna-icon {
+  height: 50px;
+  margin-left: 60%;
+}
+.postnumber-input {
+  height: 6vh;
+  width: 95%;
+}
+.postnumber-button {
+  background-color: black;
+  color: #fff;
+  display: none;
+  height: 50px;
+  width: 20%;
+  margin-left: 10px;
+}
+.hide-button {
+  display: none;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+}
+.pn-ikon-1 {
+  height: 30px;
+  margin-left: 50%;
+  border-radius: 15px;
+}
+.pn-ikon-2 {
+  height: 30px;
+  margin-left: 60%;
+  border-radius: 15px;
+}
+.postnord-radio-option {
+  display: flex;
+  align-items: center;
+}
+.home-radio-option {
+  display: flex;
+  align-items: center;
+}
+.postnord-radio,
+.home-radio,
+.klarna-radio,
+.card-radio {
+  transform: scale(1.3);
+}
+.border-form {
+  border: 1px solid #000;
+  border-radius: 15px;
+}
+.klarna-radio-option {
+  display: flex;
+  align-items: center;
+}
+.card-radio-option {
+  display: flex;
+  align-items: center;
+}
+
+.klarna-text-1,
+.card-text {
+  margin-left: 32px;
+  font-size: large;
+  color: $dark_gray;
+}
+.klarna-text-2 {
+  margin-left: 60px;
+}
+.row-1,
+.row-2,
+.row-3 {
+  display: flex;
+  align-items: center;
+}
+.check-icon {
+  height: 20px;
+  margin-right: 10px;
+}
+.card-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.card-text-row1,
+.card-text-row2 {
+  height: 6vh;
+  width: 80%;
+}
+@import "../base/typography.scss";
+@import "../base/colors.scss";
+/*-----------------------------------MOBILE MODE-----------------------------------*/
+#postnord-info,
+#hemleverans-info {
+  display: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+h3 {
+  font-weight: $light;
+  margin-left: 10px;
+}
+.info-p {
+  font-size: large;
+  color: $dark_gray;
+}
+.klarna-icon {
+  height: 50px;
+  margin-left: 60%;
+}
+.postnumber-input {
+  height: 6vh;
+  width: 95%;
+}
+.postnumber-button {
+  background-color: black;
+  color: #fff;
+  display: none;
+  height: 50px;
+  width: 20%;
+  margin-left: 10px;
+}
+.hide-button {
+  display: none;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+}
+.pn-ikon-1 {
+  height: 30px;
+  margin-left: 50%;
+  border-radius: 15px;
+}
+.pn-ikon-2 {
+  height: 30px;
+  margin-left: 60%;
+  border-radius: 15px;
+}
+.postnord-radio-option {
+  display: flex;
+  align-items: center;
+}
+.home-radio-option {
+  display: flex;
+  align-items: center;
+}
+.postnord-radio,
+.home-radio,
+.klarna-radio,
+.card-radio {
+  transform: scale(1.3);
+}
+.info-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.border-form {
+  border: 1px solid #000;
+  border-radius: 15px;
+}
+.klarna-radio-option {
+  display: flex;
+  align-items: center;
+}
+.card-radio-option {
+  display: flex;
+  align-items: center;
+}
+
+.klarna-text-1,
+.card-text {
+  margin-left: 32px;
+  font-size: large;
+  color: $dark_gray;
+}
+.klarna-text-2 {
+  margin-left: 60px;
+}
+.row-1,
+.row-2,
+.row-3 {
+  display: flex;
+  align-items: center;
+}
+.check-icon {
+  height: 20px;
+  margin-right: 10px;
+}
+.card-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.card-text-row1,
+.card-text-row2 {
+  height: 6vh;
+  width: 80%;
+  margin-left: 15px;
+}
+.card-text-row3,
+.card-text-row4 {
+  height: 6vh;
+  width: 40%;
+}
+.card-text-row3-4 {
+  display: flex;
+  align-items: center;
+  width: 98%;
+  margin-left: 15px;
+}

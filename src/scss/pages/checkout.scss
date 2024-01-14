@@ -1,0 +1,190 @@
+@import "../base/typography.scss";
+@import "../base/colors.scss";
+/*-----------------------------------MOBILE MODE-----------------------------------*/
+.delivery-info {
+  display: none;
+}
+.title {
+  margin-left: 20px;
+  display: flex;
+}
+.post-number {
+  display: flex;
+}
+
+.post-input {
+  height: 6vh;
+  width: 70%;
+  margin-left: 20px;
+}
+.post-number-button {
+  height: 6vh;
+  width: 20%;
+  border-radius: 0;
+  background-color: #000;
+  color: #fff;
+  margin-left: 10px;
+}
+.line {
+  width: 95%;
+  height: 1px;
+  border: 0 none;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #dddcdc;
+}
+.extra-text {
+  color: rgb(8, 154, 47);
+}
+h2 {
+  margin-left: 50px;
+  margin-top: 70px;
+  margin-bottom: 1px;
+}
+#delivery-text-1 input,
+#delivery-text-2 input {
+  margin-right: 10px;
+}
+p {
+  margin-left: 50px;
+  color: rgb(115, 112, 112);
+  margin-bottom: 10px;
+  font-size: 18px;
+  margin-top: 1px;
+}
+.info-1,
+.d-1 {
+  border-start-start-radius: 8px;
+  border-start-end-radius: 8px;
+}
+.info-8,
+.d-8 {
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.info-item {
+  border: 1px solid #000;
+  height: 52px;
+  width: 85%;
+  margin-left: 40px;
+}
+ul,
+form {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+.info-1 {
+  display: grid;
+}
+
+.info-4 {
+  width: 41.7%;
+  margin-left: 40px;
+}
+.info-5,
+.d-5 {
+  width: 41.7%;
+  margin: 0;
+}
+.info-8,
+.d-8 {
+  margin-bottom: 30px;
+}
+
+button {
+  width: 85%;
+  height: 50px;
+  border-radius: 8px;
+  margin-left: 40px;
+  font-size: 16px;
+}
+.first-continue,
+.continue-button {
+  background-color: #000;
+  color: #fff;
+}
+.first-cancel,
+.cancel-button {
+  background-color: #fff;
+  margin-top: 15px;
+}
+.d-item {
+  border: 1px solid #000;
+  height: 52px;
+  width: 85%;
+  margin-left: 40px;
+}
+.d-4 {
+  width: 42.5%;
+  margin-left: 40px;
+}
+.d-5 {
+  width: 42.5%;
+  margin: 0;
+}
+#klarna-radio {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.option-radio,
+.option-radio2 {
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+}
+.pay-option {
+  border: 1px solid #000;
+  border-radius: 20px;
+  width: 85%;
+  margin-left: 40px;
+}
+.pay-info {
+  border: 1px solid #000;
+  border-radius: 8px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 60px;
+  height: 22.7vh;
+}
+.card-name {
+  height: 50px;
+  width: calc(100% - 8px);
+}
+.card-id {
+  height: 50px;
+  width: calc(100% - 8px);
+}
+.card-date,
+.card-cvc {
+  height: 50px;
+  margin: 0;
+  display: inline-block;
+}
+.pay-title {
+  color: #000;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.p-text {
+  color: #000;
+}
+.pn-ikon1 {
+  height: 30px;
+  margin-left: 200px;
+}
+.pn-ikon2 {
+  height: 30px;
+  margin-left: 275px;
+}
+.delivery-price {
+  display: flex;
+  justify-content: space-between;
+}
+.delivery-price2 {
+  display: flex;
+  justify-content: space-between;
+}
