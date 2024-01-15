@@ -30,14 +30,12 @@ function updateDeliveryInfo() {
       'input[name="delivery-option"]:checked'
     ) as HTMLInputElement;
 
-    // Kontrollera om en leveransalternativ är vald
     if (selectedDeliveryOption) {
-      // Kontrollera vilket leveransalternativ som är valt
       if (selectedDeliveryOption.id === "postnord-option") {
-        // Visa Postnord-info och dölj Hemleverans-info
+        // Visar Postnord-info och döljer Hemleverans-info
         hemleveransInfo.style.display = "none";
       } else if (selectedDeliveryOption.id === "hemleverans-option") {
-        // Visa Hemleverans-info och dölj Postnord-info
+        // Visar Hemleverans-info och döljer Postnord-info
         postnordInfo.style.display = "none";
       }
     }
@@ -65,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (event: Event) {
     event.preventDefault();
 
-    // Använd andra fortsättningsknappen
     const secondContinueButton = document.getElementById(
       "second-continue"
     ) as HTMLButtonElement;
@@ -88,9 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ) as HTMLButtonElement;
 
   if (secondCancelButton) {
-    secondCancelButton.addEventListener("click", function () {
-      // Koden för andra avbryt-knappen
-    });
+    secondCancelButton.addEventListener("click", function () {});
   }
 });
 
@@ -114,8 +109,6 @@ function validateNameInputs(): boolean {
   const firstNameInput = document.querySelector(
     'input[name="förnamn"]'
   ) as HTMLInputElement;
-
-  // Validera att förnamnet endast innehåller bokstäver
   const onlyLettersPattern = /^[A-Za-z]+$/;
   return (
     firstNameInput.value.trim() !== "" &&
@@ -141,7 +134,6 @@ function validateMobileNumber(): boolean {
     'input[name="mobilnummer"]'
   ) as HTMLInputElement;
 
-  // Validera att mobilnumret endast innehåller siffror och har minst 10 tecken
   const onlyNumbersPattern = /^[0-9]+$/;
   return (
     mobileNumberInput.value.trim() !== "" &&
@@ -159,13 +151,11 @@ document.addEventListener("DOMContentLoaded", function () {
   ) as HTMLButtonElement;
 
   postnumberInput.addEventListener("focus", function () {
-    // Visa knappen och justera bredden när användaren klickar på input-fältet
     submitButton.style.display = "block";
     postnumberInput.style.width = "75%";
   });
 
   submitButton.addEventListener("click", function () {
-    // Dölj knappen och återställ bredden när användaren klickar på knappen
     submitButton.style.display = "none";
     postnumberInput.style.width = "95%";
   });
@@ -183,9 +173,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const hemleveransInfo = document.getElementById("hemleverans-info");
 
   postnumberButton.addEventListener("click", function () {
-    // Kontrollera om postnummer har fyllts i
+    // Kontroller att postnummer fyllts i
     if (postnumberInput.value.trim() !== "") {
-      // Visa både postnord-info och hemleverans-info
+      // Visar både postnord-info och hemleverans-info
       postnordInfo.style.display = "block";
       hemleveransInfo.style.display = "block";
     } else {
@@ -193,12 +183,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-//
-// checkout.ts
 
-// checkout.ts
-
-// Funktionen för att hantera ändring av betalningsmetod
+//betalningsmetod
 function handlePaymentMethodChange() {
   const klarnaRadio = document.getElementById(
     "klarna-option"
@@ -208,23 +194,21 @@ function handlePaymentMethodChange() {
   const cardDetailsContainer = document.querySelector(
     ".card-details"
   ) as HTMLElement;
-  const klarnaText2Container = document.querySelector(
-    ".klarna-text-2"
+  const klarnaTextContainer = document.querySelector(
+    ".klarna-text-1"
   ) as HTMLElement;
 
-  // Om Klarna väljs, dölj card details och visa Klarna-texten
+  // Om Klarna väljs, döljs card details och visa Klarna-texten
   if (klarnaRadio.checked) {
     cardDetailsContainer.style.display = "none";
-    klarnaText2Container.style.display = "block";
-    // Här kan du även återställa värdena i card details-inputsen om det behövs
+    klarnaTextContainer.style.display = "block";
   } else if (cardRadio.checked) {
-    // Om kort väljs, visa card details och dölj Klarna-texten
+    // Om kort väljs, visas card details och döljer Klarna-texten
     cardDetailsContainer.style.display = "block";
-    klarnaText2Container.style.display = "none";
+    klarnaTextContainer.style.display = "none";
   }
 }
 
-// Lyssna på ändringar i betalningsmetodradio-knapparna
 const klarnaRadio = document.getElementById(
   "klarna-option"
 ) as HTMLInputElement;
