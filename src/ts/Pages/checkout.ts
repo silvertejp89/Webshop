@@ -1,4 +1,4 @@
-import "./../../scss/pages/new.form.scss";
+import "./../../scss/pages/checkout.scss";
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".form-1") as HTMLFormElement;
@@ -170,3 +170,65 @@ document.addEventListener("DOMContentLoaded", function () {
     postnumberInput.style.width = "95%";
   });
 });
+
+//
+document.addEventListener("DOMContentLoaded", function () {
+  const postnumberInput = document.getElementById(
+    "post-numbers"
+  ) as HTMLInputElement;
+  const postnumberButton = document.getElementById(
+    "submit-button"
+  ) as HTMLButtonElement;
+  const postnordInfo = document.getElementById("postnord-info");
+  const hemleveransInfo = document.getElementById("hemleverans-info");
+
+  postnumberButton.addEventListener("click", function () {
+    // Kontrollera om postnummer har fyllts i
+    if (postnumberInput.value.trim() !== "") {
+      // Visa både postnord-info och hemleverans-info
+      postnordInfo.style.display = "block";
+      hemleveransInfo.style.display = "block";
+    } else {
+      alert("Fyll i postnummer innan du fortsätter.");
+    }
+  });
+});
+//
+// checkout.ts
+
+// checkout.ts
+
+// Funktionen för att hantera ändring av betalningsmetod
+function handlePaymentMethodChange() {
+  const klarnaRadio = document.getElementById(
+    "klarna-option"
+  ) as HTMLInputElement;
+  const cardRadio = document.getElementById("card-option") as HTMLInputElement;
+
+  const cardDetailsContainer = document.querySelector(
+    ".card-details"
+  ) as HTMLElement;
+  const klarnaText2Container = document.querySelector(
+    ".klarna-text-2"
+  ) as HTMLElement;
+
+  // Om Klarna väljs, dölj card details och visa Klarna-texten
+  if (klarnaRadio.checked) {
+    cardDetailsContainer.style.display = "none";
+    klarnaText2Container.style.display = "block";
+    // Här kan du även återställa värdena i card details-inputsen om det behövs
+  } else if (cardRadio.checked) {
+    // Om kort väljs, visa card details och dölj Klarna-texten
+    cardDetailsContainer.style.display = "block";
+    klarnaText2Container.style.display = "none";
+  }
+}
+
+// Lyssna på ändringar i betalningsmetodradio-knapparna
+const klarnaRadio = document.getElementById(
+  "klarna-option"
+) as HTMLInputElement;
+const cardRadio = document.getElementById("card-option") as HTMLInputElement;
+
+klarnaRadio.addEventListener("change", handlePaymentMethodChange);
+cardRadio.addEventListener("change", handlePaymentMethodChange);
