@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product listing page</title>
+  </head>
+  <body id="collections">
+    <div id="navbar_wrapper"></div>
+    <div class="plp_hero">
+      <img src="src/images/photos/png/PLP_Header_test.png" alt="" />
+      <div class="plp_category">
+        <p>EVERYDAY ORIGINALS</p>
+      </div>
+    </div>
+<<<<<<< HEAD
+    <div id="home_product__cards"></div>
+    <div id="footer_wrapper"></div>
+    <script type="module" src="/src/ts/pages/plp.ts"></script>
+=======
+
+    <script type="module" src="src/ts/Pages/plp.ts"></script>
+>>>>>>> new-form
+  </body>
+</html>
