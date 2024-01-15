@@ -98,7 +98,7 @@ export function createHTMLCart(cartContainer: Element) {
   toCheckoutButton.classList.add("button_lg__secondary");
   toCheckoutButton.innerText = "Go to Checkout";
   toCheckoutButton.addEventListener("click", function () {
-    window.location.href = "/temporaryCheckout.html";
+    window.location.href = "/checkout.html";
   });
   cartContainer.appendChild(toCheckoutButton);
 }
@@ -154,6 +154,7 @@ export function decreaseAmount(i: number) {
 //Increase amount-------------------------------------------
 export function increaseAmount(i: number) {
   cart[i].amount++;
+  console.log(cart);
 }
 
 //Total amount & total price---------------------------------
@@ -176,6 +177,10 @@ export function calculateTotalPrice() {
   totalPrice = 0;
 
   for (let i = 0; i < cart.length; i++) {
+    console.log("cart amount: ", cart[i].amount);
+    console.log("cart price: ", cart[i].priceSEK);
+
     totalPrice += cart[i].amount * cart[i].priceSEK;
+    console.log("total price:", totalPrice);
   }
 }
