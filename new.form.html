@@ -65,48 +65,74 @@
           <hr />
         </li>
         <li>
-          <h2>Dina uppgifter</h2>
+          <h2 class="title-1">Dina uppgifter</h2>
           <p class="info-p">Adressen ska vara i Sverige.</p>
           <div class="info-details">
-            <input
-              type="email"
-              name="mail"
-              placeholder=" Mejladress"
-              required
-            />
-            <input
-              type="text"
-              placeholder="Ange postnummer"
-              maxlength="5"
-              minlength="5"
-              pattern="[0-9]*"
-              id="post-numbers"
-              required
-            />
-            <input
-              type="text"
-              placeholder=" Personnummer (frivilligt)"
-              maxlength="12"
-              minlength="12"
-              pattern="\d{12}"
-              required
-            />
-            <input type="text" name="förnamn" placeholder="Förnamn" required />
-            <input type="text" placeholder="Efternamn" required />
-            <input
-              type="text"
-              placeholder="Adress"
-              pattern="[A-Za-z0-9]+"
-              required
-            />
-            <input type="text" placeholder="Ort" required />
-            <input type="text" placeholder="Mobilnummer" required />
+            <div class="first-3-rows">
+              <input
+                type="email"
+                class="info-row1"
+                name="mail"
+                placeholder=" Mejladress"
+                required
+              />
+              <input
+                type="text"
+                class="info-row2"
+                placeholder="Ange postnummer"
+                maxlength="5"
+                minlength="5"
+                pattern="[0-9]*"
+                id="post-numbers"
+                required
+              />
+              <input
+                type="text"
+                class="info-row3"
+                placeholder=" Personnummer (frivilligt)"
+                maxlength="12"
+                minlength="12"
+                pattern="\d{12}"
+                required
+              />
+            </div>
+            <div class="middle-rows">
+              <input
+                type="text"
+                class="info-row4"
+                name="förnamn"
+                placeholder="Förnamn"
+                required
+              />
+              <input
+                type="text"
+                placeholder="Efternamn"
+                class="info-row5"
+                required
+              />
+            </div>
+            <div class="last-3-rows">
+              <input
+                type="text"
+                class="info-row6"
+                placeholder="Adress"
+                pattern="[A-Za-z0-9]+"
+                required
+              />
+              <input type="text" class="info-row7" placeholder="Ort" required />
+              <input
+                type="text"
+                class="info-row8"
+                placeholder="Mobilnummer"
+                required
+              />
+            </div>
           </div>
-          <button id="second-continue">Fortsätt</button>
-          <button id="second-cancel">Avbryt</button>
+          <button id="second-continue" class="continue-button">Fortsätt</button>
+          <button id="second-cancel" class="cancel-button">Avbryt</button>
         </li>
         <li>
-          <h2>Betalningssätt</h2>
+          <h2 class="title-2">Betalningssätt</h2>
           <div class="border-form">
             <div class="klarna-radio-option">
               <input
@@ -149,7 +175,7 @@
                 <p>Säkert och smidigt</p>
               </div>
             </div>
-            <hr class="line" />
+            <hr class="pay-option-line" />
             <div class="card-radio-option">
               <input
                 type="radio"
@@ -189,6 +215,7 @@
               </div>
             </div>
           </div>
+          <button class="pay-button">Betala köp</button>
         </li>
       </ul>
     </form>
