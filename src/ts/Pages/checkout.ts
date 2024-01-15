@@ -165,23 +165,26 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const postnumberInput = document.getElementById(
     "post-numbers"
-  ) as HTMLInputElement;
+  ) as HTMLInputElement | null;
   const postnumberButton = document.getElementById(
     "submit-button"
-  ) as HTMLButtonElement;
+  ) as HTMLButtonElement | null;
   const postnordInfo = document.getElementById("postnord-info");
   const hemleveransInfo = document.getElementById("hemleverans-info");
 
-  postnumberButton.addEventListener("click", function () {
-    // Kontroller att postnummer fyllts i
-    if (postnumberInput.value.trim() !== "") {
-      // Visar både postnord-info och hemleverans-info
-      postnordInfo.style.display = "block";
-      hemleveransInfo.style.display = "block";
-    } else {
-      alert("Fyll i postnummer innan du fortsätter.");
-    }
-  });
+  if (postnumberInput && postnumberButton && postnordInfo && hemleveransInfo) {
+    postnumberButton.addEventListener("click", function () {
+      if (postnumberInput.value.trim() !== "") {
+        // Visar både postnord-info och hemleverans-info
+        if (postnordInfo) postnordInfo.style.display = "block";
+        if (hemleveransInfo) hemleveransInfo.style.display = "block";
+      } else {
+        alert("Fyll i postnummer innan du fortsätter.");
+      }
+    });
+  } else {
+    console.error("One or more elements not found.");
+  }
 });
 
 //betalningsmetod

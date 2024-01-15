@@ -12,6 +12,11 @@ ul {
   margin: 0;
   padding: 0;
 }
+.hemleverans-info,
+.postnord-info {
+  margin-top: 1px;
+  margin-left: 40px;
+}
 h3 {
   font-weight: $light;
   margin-left: 10px;
@@ -226,7 +231,7 @@ h3 {
 
 .popup {
   width: 370px;
-  background: rgb(47, 46, 46) 0;
+  background: #323030;
   background-size: 100%;
   background-repeat: no-repeat;
   border-radius: 6px;
@@ -246,7 +251,7 @@ h3 {
 }
 .open-popup {
   visibility: visible;
-  top: 140%;
+  top: 170%;
   transform: translate(-50%, -50%) scale(1);
 }
 .popup h2 {
@@ -268,9 +273,6 @@ h3 {
 
 /*-----------------------------------DESKTOP MODE-----------------------------------*/
 @media (min-width: 768px) {
-  .postnumber-input {
-    width: 57%;
-  }
   .line-1,
   .line-2,
   .line-3 {

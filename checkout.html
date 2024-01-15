@@ -19,6 +19,7 @@
               minlength="5"
               pattern="[0-9]*"
               id="post-numbers"
+              required
             />
             <button class="postnumber-button" id="submit-button">
               Fortsätt
@@ -34,6 +35,7 @@
               class="postnord-radio"
               name="delivery-option"
               id="postnord-option"
+              required
             />
             <h3>Postnord ombud och paketskåp</h3>
             <img
@@ -41,10 +43,10 @@
               alt=""
               class="pn-ikon-1"
             />
-            <p id="postnord-info" class="post-info">5-8 arbetsdagar</p>
-            <p id="postnord-info" class="post-info">svanenmärkt</p>
           </div>
-
+          <div class="post-info">
+            <p id="postnord-info" class="postnord-info">5-8 arbetsdagar</p>
+          </div>
           <hr class="line-2" />
           <div class="home-radio-option">
             <input
@@ -52,6 +54,7 @@
               class="home-radio"
               name="delivery-option"
               id="hemleverans-option"
+              required
             />
             <h3>Hemleverans kvällstid</h3>
             <img
@@ -59,10 +62,11 @@
               alt=""
               class="pn-ikon-2"
             />
-            <div class="post-info">
-              <p id="hemleverans-info" class="post-info">7-9 arbetsdagar</p>
-              <p id="hemleverans-info" class="post-info">svanenmärkt</p>
-            </div>
+          </div>
+          <div>
+            <p id="hemleverans-info" class="hemleverans-info">
+              7-9 arbetsdagar
+            </p>
           </div>
           <hr class="line-3" />
         </li>
@@ -153,6 +157,7 @@
                 class="klarna-radio"
                 name="pay-option"
                 id="klarna-option"
+                required
               />
               <h3>Betala med Klarna.</h3>
               <img
@@ -257,6 +262,7 @@
               </p>
               <button type="button" onclick="closePopup()">
                 Okay, continue shopping
+                <a href="http://localhost:5173/home.html"></a>
               </button>
             </div>
           </div>
