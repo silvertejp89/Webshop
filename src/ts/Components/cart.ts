@@ -96,6 +96,7 @@ export function createHTMLCart(cartContainer: Element) {
 
   const toCheckoutButton = document.createElement("button");
   toCheckoutButton.classList.add("button_lg__secondary");
+  toCheckoutButton.classList.add("checkout-button");
   toCheckoutButton.innerText = "Go to Checkout";
   toCheckoutButton.addEventListener("click", function () {
     window.location.href = "/checkout.html";

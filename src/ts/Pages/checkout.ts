@@ -1,4 +1,5 @@
 import "./../../scss/pages/checkout.scss";
+import { createHTMLCart } from "./../Components/cart";
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".form-1") as HTMLFormElement;
@@ -91,6 +92,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //mail adress giltig
 
+//VISA CART
+const checkoutCart = document.querySelector(".checkout-cart");
+
+if (checkoutCart) {
+  const container = document.createElement("div");
+  container.className = "cart-container";
+
+  checkoutCart.appendChild(container);
+
+  createHTMLCart(container);
+}
+
+//dölj "go to checkout-button" nedanför cart;
+const checkoutButton = document.querySelector(".checkout-button");
+if (checkoutButton) {
+  // Göm knappen
+  (checkoutButton as HTMLElement).style.display = "none";
+}
+
 //postnummer
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".form-1") as HTMLFormElement;
@@ -165,26 +185,23 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const postnumberInput = document.getElementById(
     "post-numbers"
-  ) as HTMLInputElement | null;
+  ) as HTMLInputElement;
   const postnumberButton = document.getElementById(
     "submit-button"
-  ) as HTMLButtonElement | null;
+  ) as HTMLButtonElement;
   const postnordInfo = document.getElementById("postnord-info");
   const hemleveransInfo = document.getElementById("hemleverans-info");
 
-  if (postnumberInput && postnumberButton && postnordInfo && hemleveransInfo) {
-    postnumberButton.addEventListener("click", function () {
-      if (postnumberInput.value.trim() !== "") {
-        // Visar både postnord-info och hemleverans-info
-        if (postnordInfo) postnordInfo.style.display = "block";
-        if (hemleveransInfo) hemleveransInfo.style.display = "block";
-      } else {
-        alert("Fyll i postnummer innan du fortsätter.");
-      }
-    });
-  } else {
-    console.error("One or more elements not found.");
-  }
+  postnumberButton.addEventListener("click", function () {
+    // Kontroller att postnummer fyllts i
+    if (postnumberInput.value.trim() !== "") {
+      // Visar både postnord-info och hemleverans-info
+      postnordInfo.style.display = "block";
+      hemleveransInfo.style.display = "block";
+    } else {
+      alert("Fyll i postnummer innan du fortsätter.");
+    }
+  });
 });
 
 //betalningsmetod

@@ -26,14 +26,14 @@
 
 .cart-modal.show {
   right: 0;
-  // height: auto;
+  height: auto;
 }
 
 //Temporary styling
 .thumnail-image-container{
-  width: 50%;
+  width: 100%;
   img {
-      max-width: 100%;
+      max-width: 200px;
   }
 };
 
