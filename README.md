@@ -1,49 +1,53 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/XiHEpAmJ)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=13290364&assignment_repo_type=AssignmentRepo)
-# The Webshop - En inlämningsuppgift
+# The Webshop - An Assignment
 
-Denna uppgift går ut på att ni skall bygga en webbshop baserat på kraven här under.
+This task is about building an online store based on the requirements outlined below.
+This project is a Vite project where you have a ready-made structure to work with.
 
-Detta projekt är ett vite-projekt där ni har en färdig struktur att arbeta vidare med.
+Technologies
+HTML
+SCSS
+TypeScript
 
-## Teknik
+Requirements
+A landing page (home page)
 
-- HTML
-- SCSS
-- TypeScript
+A product page (Product details)
 
-## Krav - Betyg G
+A checkout page
 
-- En landningssida (startsida)
-- En produktsida (Produktdetaljer)
-- En kassasida
-- En varukorg
-- Kunna lägga produkter i varukorgen
-- Simulera att ett köp genomförs på kassasidan
-- Beräkna fram ett totalpris på produkterna i varukorgen
-- Att informationen i varukorgen lagras genom utökade objekt, inte bara en produkt
-- Att kunna öka/minska antalet produkter i varukorgen.
-- Att kunna öka/minska antalet produkter på kassasidan
-- Koden skall vara mycket väl strukturerad, väl formaterad samt innehålla god namngivning
+A shopping cart
 
-  **Agila arbetssätt:**
-- använda agil metod
-- genomföra agila aktiviteter
-- tillämpa verktyg som underlättar ett agilt arbetssätt
+Ability to add products to the shopping cart
 
+Simulate a purchase on the checkout page
 
-## Arbetssätt
+Calculate the total price of the products in the shopping cart
 
-Ni behöver driva detta projekt som ett agilt utvecklingsprojekt. Använd cermonier & artefakter ni har lärt er såsom:
+Store the information in the shopping cart through extended objects, not just one product
 
-- Daily standups
-- Sprintplanering
-- Backlog
-- Retrospektiv
+Ability to increase/decrease the number of products in the shopping cart.
 
-Ni bör ha mer en än iteration, välj om ni vill ha sprintar eller köra Kanban
+Ability to increase/decrease the number of products on the checkout page
 
-## Styling
+The code should be very well-structured, well-formatted, and have good naming conventions
 
-Försök att arbeta med så mycket styling ni hinner. Det är en rolig uppgift att ha med i ett portfolio framöver. Se till att era animationer är subtila. Arbeta med hero-images, kanske med lite video/ljud. Och skapa en bra struktur mer er scss redan från början. 
+Agile approach:
+
+Use agile methods
+
+Implement agile activities
+
+Apply tools that facilitate an agile approach
+
+Approach
+You need to run this project as an agile development project. Use ceremonies & artifacts you have learned such as:
+
+Daily standups
+Sprint planning
+Backlog
+Retrospectives
+You should have more than one iteration, choose whether you want to have sprints or use Kanban.
+
+Styling
+Try to work with as much styling as you can manage. It's a fun task to include in a portfolio in the future. Ensure your animations are subtle. Work with hero images, perhaps with a bit of video/audio. And create a good structure with your SCSS right from the start.
 
