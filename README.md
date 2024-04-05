@@ -33,7 +33,7 @@ You need to run this project as an agile development project. Use ceremonies & a
 - Sprint planning
 - Backlog
 - Retrospectives
-- 
+ 
 You should have more than one iteration, choose whether you want to have sprints or use Kanban.
 
 ## Styling
