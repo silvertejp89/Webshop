@@ -192,47 +192,67 @@ document.addEventListener("DOMContentLoaded", function () {
   const postnordInfo = document.getElementById("postnord-info");
   const hemleveransInfo = document.getElementById("hemleverans-info");
 
+  //   postnumberButton.addEventListener("click", function () {
+  //     // Kontroller att postnummer fyllts i
+  //     if (postnumberInput.value.trim() !== "") {
+  //       // Visar både postnord-info och hemleverans-info
+  //       postnordInfo.style.display = "block";
+  //       hemleveransInfo.style.display = "block";
+  //     } else {
+  //       alert("Fyll i postnummer innan du fortsätter.");
+  //     }
+  //   });
+  // });
+
   postnumberButton.addEventListener("click", function () {
     // Kontroller att postnummer fyllts i
     if (postnumberInput.value.trim() !== "") {
-      // Visar både postnord-info och hemleverans-info
-      postnordInfo.style.display = "block";
-      hemleveransInfo.style.display = "block";
+      // Kontrollera att postnordInfo och hemleveransInfo är definierade innan de används
+      if (postnordInfo && hemleveransInfo) {
+        postnordInfo.style.display = "block";
+        hemleveransInfo.style.display = "block";
+      } else {
+        console.error(
+          "postnordInfo eller hemleveransInfo är null eller undefined."
+        );
+      }
     } else {
       alert("Fyll i postnummer innan du fortsätter.");
     }
   });
-});
 
-//betalningsmetod
-function handlePaymentMethodChange() {
+  //betalningsmetod
+  function handlePaymentMethodChange() {
+    const klarnaRadio = document.getElementById(
+      "klarna-option"
+    ) as HTMLInputElement;
+    const cardRadio = document.getElementById(
+      "card-option"
+    ) as HTMLInputElement;
+
+    const cardDetailsContainer = document.querySelector(
+      ".card-details"
+    ) as HTMLElement;
+    const klarnaTextContainer = document.querySelector(
+      ".klarna-text-1"
+    ) as HTMLElement;
+
+    // Om Klarna väljs, döljs card details och visa Klarna-texten
+    if (klarnaRadio.checked) {
+      cardDetailsContainer.style.display = "none";
+      klarnaTextContainer.style.display = "block";
+    } else if (cardRadio.checked) {
+      // Om kort väljs, visas card details och döljer Klarna-texten
+      cardDetailsContainer.style.display = "block";
+      klarnaTextContainer.style.display = "none";
+    }
+  }
+
   const klarnaRadio = document.getElementById(
     "klarna-option"
   ) as HTMLInputElement;
   const cardRadio = document.getElementById("card-option") as HTMLInputElement;
 
-  const cardDetailsContainer = document.querySelector(
-    ".card-details"
-  ) as HTMLElement;
-  const klarnaTextContainer = document.querySelector(
-    ".klarna-text-1"
-  ) as HTMLElement;
-
-  // Om Klarna väljs, döljs card details och visa Klarna-texten
-  if (klarnaRadio.checked) {
-    cardDetailsContainer.style.display = "none";
-    klarnaTextContainer.style.display = "block";
-  } else if (cardRadio.checked) {
-    // Om kort väljs, visas card details och döljer Klarna-texten
-    cardDetailsContainer.style.display = "block";
-    klarnaTextContainer.style.display = "none";
-  }
-}
-
-const klarnaRadio = document.getElementById(
-  "klarna-option"
-) as HTMLInputElement;
-const cardRadio = document.getElementById("card-option") as HTMLInputElement;
-
-klarnaRadio.addEventListener("change", handlePaymentMethodChange);
-cardRadio.addEventListener("change", handlePaymentMethodChange);
+  klarnaRadio.addEventListener("change", handlePaymentMethodChange);
+  cardRadio.addEventListener("change", handlePaymentMethodChange);
+});

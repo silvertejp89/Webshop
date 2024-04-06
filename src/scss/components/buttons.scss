@@ -32,11 +32,13 @@
     color: $white;
     background-color: $black;
     border: 1px solid $white;
-    margin-top: 1.25rem;
-    padding: 16px 0px 16px 0px;
+    // margin-top: 1.25rem;
+    margin: 1.25rem;
+    padding: 16px 10px 16px 10px;
     transition: color 0.3s, background-color 0.3s, border 0.3s;
 
     cursor:pointer;
+
 }
 
 .button_lg__secondary:hover,
