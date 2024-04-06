@@ -7,7 +7,6 @@ import { navbarHideShowScroll } from "../Components/nav.ts";
 
 import { IProduct } from "../Models/IProduct.ts";
 import { openCartModal } from "../Components/cartModal.ts";
-import { createHTMLCart } from "../Components/cart.ts";
 
 createFooterHtml();
 

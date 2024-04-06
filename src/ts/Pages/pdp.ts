@@ -5,7 +5,7 @@ import { createNavbar } from "../Components/nav.ts";
 import { navbarHideShowScroll } from "../Components/nav.ts";
 
 import { createFooterHtml } from "../Components/footer.ts";
-import { cart, createCartProduct } from "../Components/cart.ts";
+import { createCartProduct } from "../Components/cart.ts";
 import { openCartModal } from "../Components/cartModal.ts";
 
 createNavbar();
