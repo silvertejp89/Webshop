@@ -1,5 +1,5 @@
 import "../../scss/main.scss";
-import { createHTMLCart } from "./cart";
+import { createHTMLCart } from "./cart.ts";
 
 export function openCartModal(): void {
   const cartSvg = document.querySelector(
