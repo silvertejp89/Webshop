@@ -1,6 +1,3 @@
-//class för att skapa "ny" produkt att lägga i varukorgen.
-//Amount lägg till och sätts till 1 som default. "Description" och "measurement" finns inte med.
-
 export class CartProduct {
   id: number;
   name: string;

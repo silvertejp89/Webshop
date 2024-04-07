@@ -1,5 +1,6 @@
 import "../../scss/main.scss";
-import { CartProduct } from "./../Models/CartProduct.ts";
+// import { CartProduct } from "./../Models/CartProduct.ts";
+import { CartProduct } from "../Models/Test";
 
 export let cart: CartProduct[] = [];
 
